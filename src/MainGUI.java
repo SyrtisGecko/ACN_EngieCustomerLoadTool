@@ -9,9 +9,14 @@ public class MainGUI {
     private JProgressBar progressBar3;
     private JProgressBar progressBar4;
     private JProgressBar progressBar5;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
+    private JButton selectInput1_button;
+    private JButton selectInput2_button;
+    private JButton selectInput3_button;
+    private JButton selectOutput_button;
     private JButton button5;
+    private JPanel mainPanel;
+    private JLabel selectInputFile1;
+    private JLabel selectInputFile2;
+    private JLabel selectInputFile3;
+    private JLabel selectOutputFile;
 }
