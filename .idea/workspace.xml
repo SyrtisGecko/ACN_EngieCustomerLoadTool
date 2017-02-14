@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+            <state relative-caret-position="206">
+              <caret line="102" column="24" lean-forward="false" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainGUI.form" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainGUI.form" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
@@ -72,8 +72,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ToolLauncher.java" />
-        <option value="$PROJECT_DIR$/src/MainGUI.form" />
         <option value="$PROJECT_DIR$/src/MainGUI.java" />
+        <option value="$PROJECT_DIR$/src/MainGUI.form" />
       </list>
     </option>
   </component>
@@ -473,19 +473,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+        <state relative-caret-position="206">
+          <caret line="102" column="24" lean-forward="false" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
   </component>

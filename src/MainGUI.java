@@ -34,8 +34,14 @@ public class MainGUI {
     private JTextArea processingLog;
     private JPanel BOInput_panel;
     private JLabel BOInput_path_label;
+    private JPanel AnagraficheInput_panel;
+    private JLabel AnagraficheInput_path_label;
+    private JPanel otherInput_panel;
+    private JLabel otherInput_path_label;
 
     private JFileChooser selectBOInput;
+    private JFileChooser selectAnagraficheInput;
+    private JFileChooser selectOtherInput;
 
     public MainGUI() {
         initGUI();
@@ -45,10 +51,43 @@ public class MainGUI {
             public void actionPerformed(ActionEvent e) {
                 selectBOInput = new JFileChooser();
                 int returnVal = selectBOInput.showOpenDialog(BOInput_panel);
+
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     File file = selectBOInput.getSelectedFile();
-                    processingLog.append("\nOpening: " + file.getAbsolutePath());
-                    BOInput_path_label.setText(file.getAbsolutePath());
+                    processingLog.append("\nOpening BO: " + file.getAbsolutePath());
+                    BOInput_path_label.setText(file.getName());
+                } else {
+                    processingLog.append("\nOpen command cancelled by user.");
+                }
+            }
+        });
+
+        selectAnagraficheInput_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectAnagraficheInput = new JFileChooser();
+                int returnVal = selectAnagraficheInput.showOpenDialog(AnagraficheInput_panel);
+
+                if(returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = selectAnagraficheInput.getSelectedFile();
+                    processingLog.append("\nOpening Anagrafiche: " + file.getAbsolutePath());
+                    AnagraficheInput_path_label.setText(file.getName());
+                } else {
+                    processingLog.append("\nOpen command cancelled by user.");
+                }
+            }
+        });
+
+        selectOtherInput_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectOtherInput = new JFileChooser();
+                int returnVal = selectOtherInput.showOpenDialog(otherInput_panel);
+
+                if(returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = selectOtherInput.getSelectedFile();
+                    processingLog.append("\nOpening other: " + file.getAbsolutePath());
+                    otherInput_path_label.setText(file.getName());
                 } else {
                     processingLog.append("\nOpen command cancelled by user.");
                 }
@@ -61,7 +100,7 @@ public class MainGUI {
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(500, 650);
+        frame.setSize(510, 650);
         frame.setResizable(false);
         frame.setVisible(true);
     }
