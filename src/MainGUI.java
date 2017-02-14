@@ -5,10 +5,10 @@ import javax.swing.*;
  */
 public class MainGUI {
     private JProgressBar BOprogressBar;
-    private JProgressBar progressBar2;
-    private JProgressBar progressBar3;
-    private JProgressBar progressBar4;
-    private JProgressBar progressBar5;
+    private JProgressBar AnagraficheProgressBar;
+    private JProgressBar OtherProgressBar;
+    private JProgressBar SavingProgressBar;
+    private JProgressBar CalculationProgressBar;
     private JButton selectInput1_button;
     private JButton selectInput2_button;
     private JButton selectInput3_button;
@@ -20,6 +20,11 @@ public class MainGUI {
     private JLabel selectInputFile3;
     private JLabel selectOutputFile;
     private JLabel BO_progress_label;
+    private JLabel Anagrafiche_progress_label;
+    private JLabel Other_progress_label;
+    private JLabel Saving_progress_label;
+    private JLabel Calculation_progress_label;
+    private JTextPane textPane1;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("MainGUI");
