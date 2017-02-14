@@ -29,7 +29,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="bcd1" class="javax.swing.JButton" binding="selectInput1_button">
+          <component id="bcd1" class="javax.swing.JButton" binding="selectBOInput_button">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="1" use-parent-layout="false">
                 <minimum-size width="70" height="10"/>
@@ -62,7 +62,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="bbb08" class="javax.swing.JButton" binding="selectInput2_button">
+          <component id="bbb08" class="javax.swing.JButton" binding="selectAnagraficheInput_button">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
             </constraints>
@@ -93,7 +93,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="29096" class="javax.swing.JButton" binding="selectInput3_button">
+          <component id="29096" class="javax.swing.JButton" binding="selectOtherInput_button">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
             </constraints>
@@ -392,11 +392,11 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="e461f" class="javax.swing.JTextPane" binding="processingLog">
+          <component id="59e43" class="javax.swing.JTextArea" binding="processingLog">
             <constraints/>
             <properties>
               <editable value="true"/>
-              <text value="testtext"/>
+              <text value="processingLog:"/>
             </properties>
           </component>
         </children>
