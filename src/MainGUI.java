@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  * Created by Przemek on 2017-02-12.
@@ -31,6 +32,10 @@ public class MainGUI {
     private JLabel saving_progress_label;
     private JLabel calculation_progress_label;
     private JTextArea processingLog;
+    private JPanel BOInput_panel;
+    private JLabel BOInput_path_label;
+
+    private JFileChooser selectBOInput;
 
     public MainGUI() {
         initGUI();
@@ -38,9 +43,15 @@ public class MainGUI {
         selectBOInput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                n++;
-                System.out.println("Button was clicked");
-                processingLog.append("\nButton was clicked " +n+ " times.");
+                selectBOInput = new JFileChooser();
+                int returnVal = selectBOInput.showOpenDialog(BOInput_panel);
+                if(returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = selectBOInput.getSelectedFile();
+                    processingLog.append("\nOpening: " + file.getAbsolutePath());
+                    BOInput_path_label.setText(file.getAbsolutePath());
+                } else {
+                    processingLog.append("\nOpen command cancelled by user.");
+                }
             }
         });
     }
