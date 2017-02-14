@@ -4,6 +4,9 @@ import javax.swing.*;
  * Created by Przemek on 2017-02-12.
  */
 public class MainGUI {
+
+    JFrame frame;
+
     private JProgressBar BOprogressBar;
     private JProgressBar anagraficheProgressBar;
     private JProgressBar otherProgressBar;
@@ -26,13 +29,27 @@ public class MainGUI {
     private JLabel calculation_progress_label;
     private JTextPane processingLog;
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("MainGUI");
-        frame.setContentPane(new MainGUI().mainPanel);
+    public MainGUI() {
+        initGUI();
+    }
+
+    private void initGUI() {
+        frame = new JFrame("MainGUI");
+        frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setSize(500, 650);
         frame.setResizable(false);
         frame.setVisible(true);
     }
+
+//    public static void main(String[] args) {
+//        JFrame frame = new JFrame("MainGUI");
+//        frame.setContentPane(new MainGUI().mainPanel);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.pack();
+//        frame.setSize(500, 650);
+//        frame.setResizable(false);
+//        frame.setVisible(true);
+//    }
 }
