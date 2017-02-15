@@ -45,6 +45,11 @@ public class MainGUI {
     private JFileChooser selectOtherInput;
     private JFileChooser selectSave;
 
+    private File BOReport;
+    private File anagraficheReport;
+    private File otherReport;
+    private File saveFile;
+
     public MainGUI() {
         initGUI();
 
@@ -55,9 +60,9 @@ public class MainGUI {
                 int returnVal = selectBOInput.showOpenDialog(BOInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    File file = selectBOInput.getSelectedFile();
-                    processingLog.append("\nOpening BO: " + file.getAbsolutePath());
-                    BOInput_path_label.setText(file.getName());
+                    BOReport = selectBOInput.getSelectedFile();
+                    processingLog.append("\nOpening BO: " + BOReport.getAbsolutePath());
+                    BOInput_path_label.setText(BOReport.getName());
                 } else {
                     processingLog.append("\nOpen command cancelled by user.");
                 }
@@ -71,9 +76,9 @@ public class MainGUI {
                 int returnVal = selectAnagraficheInput.showOpenDialog(AnagraficheInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    File file = selectAnagraficheInput.getSelectedFile();
-                    processingLog.append("\nOpening Anagrafiche: " + file.getAbsolutePath());
-                    AnagraficheInput_path_label.setText(file.getName());
+                    anagraficheReport = selectAnagraficheInput.getSelectedFile();
+                    processingLog.append("\nOpening Anagrafiche: " + anagraficheReport.getAbsolutePath());
+                    AnagraficheInput_path_label.setText(anagraficheReport.getName());
                 } else {
                     processingLog.append("\nOpen command cancelled by user.");
                 }
@@ -87,9 +92,9 @@ public class MainGUI {
                 int returnVal = selectOtherInput.showOpenDialog(otherInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    File file = selectOtherInput.getSelectedFile();
-                    processingLog.append("\nOpening other: " + file.getAbsolutePath());
-                    otherInput_path_label.setText(file.getName());
+                    otherReport = selectOtherInput.getSelectedFile();
+                    processingLog.append("\nOpening other: " + otherReport.getAbsolutePath());
+                    otherInput_path_label.setText(otherReport.getName());
                 } else {
                     processingLog.append("\nOpen command cancelled by user.");
                 }
@@ -103,11 +108,25 @@ public class MainGUI {
                 int returnVal = selectSave.showSaveDialog(save_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    File file = selectSave.getSelectedFile();
-                    processingLog.append("\nChoosing save location: " + file.getAbsolutePath());
+                    saveFile = selectSave.getSelectedFile();
+                    processingLog.append("\nChoosing save location: " + saveFile.getAbsolutePath());
                 }
             }
         });
+        calculate_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                loadBO();
+//                loadAnagrafiche();
+//                loadOther();
+//                calculateReports();
+                saveResults();
+            }
+        });
+    }
+
+    private void saveResults() {
+        processingLog.append("\nSaving the results in: " + saveFile.getAbsolutePath());
     }
 
     private void initGUI() {
