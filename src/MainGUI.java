@@ -39,6 +39,7 @@ public class MainGUI {
     private JPanel otherInput_panel;
     private JLabel otherInput_path_label;
     private JPanel save_panel;
+    private JLabel selectSave_path_label;
 
     private JFileChooser selectBOInput;
     private JFileChooser selectAnagraficheInput;
@@ -110,6 +111,7 @@ public class MainGUI {
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     saveFile = selectSave.getSelectedFile();
                     processingLog.append("\nChoosing save location: " + saveFile.getAbsolutePath());
+                    selectSave_path_label.setText(saveFile.getPath());
                 }
             }
         });
