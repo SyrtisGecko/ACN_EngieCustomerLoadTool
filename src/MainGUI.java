@@ -38,10 +38,12 @@ public class MainGUI {
     private JLabel AnagraficheInput_path_label;
     private JPanel otherInput_panel;
     private JLabel otherInput_path_label;
+    private JPanel save_panel;
 
     private JFileChooser selectBOInput;
     private JFileChooser selectAnagraficheInput;
     private JFileChooser selectOtherInput;
+    private JFileChooser selectSave;
 
     public MainGUI() {
         initGUI();
@@ -90,6 +92,19 @@ public class MainGUI {
                     otherInput_path_label.setText(file.getName());
                 } else {
                     processingLog.append("\nOpen command cancelled by user.");
+                }
+            }
+        });
+        selectOutput_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectSave = new JFileChooser();
+                selectSave.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                int returnVal = selectSave.showSaveDialog(save_panel);
+
+                if(returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = selectSave.getSelectedFile();
+                    processingLog.append("\nChoosing save location: " + file.getAbsolutePath());
                 }
             }
         });
