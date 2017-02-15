@@ -58,6 +58,7 @@ public class MainGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectBOInput = new JFileChooser();
+                selectBOInput.changeToParentDirectory();
                 int returnVal = selectBOInput.showOpenDialog(BOInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -74,6 +75,7 @@ public class MainGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectAnagraficheInput = new JFileChooser();
+                selectAnagraficheInput.changeToParentDirectory();
                 int returnVal = selectAnagraficheInput.showOpenDialog(AnagraficheInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -90,6 +92,7 @@ public class MainGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectOtherInput = new JFileChooser();
+                selectOtherInput.changeToParentDirectory();
                 int returnVal = selectOtherInput.showOpenDialog(otherInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -105,6 +108,7 @@ public class MainGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectSave = new JFileChooser();
+                selectSave.changeToParentDirectory();
                 selectSave.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int returnVal = selectSave.showSaveDialog(save_panel);
 
