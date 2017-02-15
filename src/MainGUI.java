@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -145,9 +147,20 @@ public class MainGUI {
     }
 
     private void printLogToFile() {
-        Iterator iterator = actionLog.iterator();
-        while(iterator.hasNext()) {
-            System.out.println(iterator.next());
+        try {
+            Iterator iterator = actionLog.iterator();
+            DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
+            Date date = new Date();
+            PrintWriter writer = new PrintWriter(saveFile.getPath() + "\\" + dateFormat.format(date) + " log.txt");
+            writer.println("ACN Engie customer load tool log");
+            while (iterator.hasNext()) {
+                writer.println(iterator.next());
+//                System.out.println(iterator.next());
+            }
+            writer.close();
+        } catch(IOException ex) {
+            System.out.println("File cannot be saved");
+            ex.printStackTrace();
         }
     }
 
