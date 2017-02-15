@@ -2,6 +2,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 
 /**
  * Created by Przemek on 2017-02-12.
@@ -9,6 +14,8 @@ import java.io.File;
 public class MainGUI {
 
     JFrame frame;
+    
+    ArrayList<String> actionLog;
     int n;
 
     private JProgressBar BOprogressBar;
@@ -53,6 +60,7 @@ public class MainGUI {
 
     public MainGUI() {
         initGUI();
+        actionLog = new ArrayList<>();
 
         selectBOInput_button.addActionListener(new ActionListener() {
             @Override
@@ -63,10 +71,10 @@ public class MainGUI {
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     BOReport = selectBOInput.getSelectedFile();
-                    processingLog.append("\nOpening BO: " + BOReport.getAbsolutePath());
+                    logActivity("Opening BO: " + BOReport.getAbsolutePath());
                     BOInput_path_label.setText(BOReport.getName());
                 } else {
-                    processingLog.append("\nOpen command cancelled by user.");
+                    logActivity("Open command cancelled by user.");
                 }
             }
         });
@@ -80,10 +88,10 @@ public class MainGUI {
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     anagraficheReport = selectAnagraficheInput.getSelectedFile();
-                    processingLog.append("\nOpening Anagrafiche: " + anagraficheReport.getAbsolutePath());
+                    logActivity("Opening Anagrafiche: " + anagraficheReport.getAbsolutePath());
                     AnagraficheInput_path_label.setText(anagraficheReport.getName());
                 } else {
-                    processingLog.append("\nOpen command cancelled by user.");
+                    logActivity("Open command cancelled by user.");
                 }
             }
         });
@@ -97,10 +105,10 @@ public class MainGUI {
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     otherReport = selectOtherInput.getSelectedFile();
-                    processingLog.append("\nOpening other: " + otherReport.getAbsolutePath());
+                    logActivity("Opening other: " + otherReport.getAbsolutePath());
                     otherInput_path_label.setText(otherReport.getName());
                 } else {
-                    processingLog.append("\nOpen command cancelled by user.");
+                    logActivity("Open command cancelled by user.");
                 }
             }
         });
@@ -114,7 +122,7 @@ public class MainGUI {
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     saveFile = selectSave.getSelectedFile();
-                    processingLog.append("\nChoosing save location: " + saveFile.getAbsolutePath());
+                    logActivity("Choosing save location: " + saveFile.getAbsolutePath());
                     selectSave_path_label.setText(saveFile.getPath());
                 }
             }
@@ -132,7 +140,26 @@ public class MainGUI {
     }
 
     private void saveResults() {
-        processingLog.append("\nSaving the results in: " + saveFile.getAbsolutePath());
+        logActivity("Saving the results in: " + saveFile.getAbsolutePath());
+        printLogToFile();
+    }
+
+    private void printLogToFile() {
+        Iterator iterator = actionLog.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
+    private void logActivity(String log) {
+        processingLog.append("\n" + log);
+        actionLog.add(getTime() + log);
+    }
+
+    private String getTime() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SSS");
+        Date date = new Date();
+        return dateFormat.format(date) + " - ";
     }
 
     private void initGUI() {
