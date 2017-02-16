@@ -1,4 +1,5 @@
 import cosmetics.ProgressStatus;
+import cosmetics.ReportHeaders;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -146,7 +147,7 @@ public class MainGUI {
     }
 
     private void loadBO() {
-        logActivity("Loading file " + BOReport.getName() + " ........");
+        logActivity("Loading file \"" + BOReport.getName() + "\" ........");
         setProgressStatus(BO_progress_label, ProgressStatus.LOADING);
 
         try {
@@ -157,7 +158,13 @@ public class MainGUI {
             String line = null;
 
             line = reader.readLine();
-            System.out.println(line);
+
+            if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
+                logActivity("........ File headers match: OK ........");
+            } else {
+                logActivity("........ File headers match: FAIL ........");
+                setProgressStatus(BO_progress_label, ProgressStatus.ERROR);
+            }
             /*w = Integer.parseInt(reader.readLine());
             //System.out.println(w);
             k = Integer.parseInt(reader.readLine());
