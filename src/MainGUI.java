@@ -65,6 +65,11 @@ public class MainGUI {
         initGUI();
         actionLog = new ArrayList<>();
 
+
+        /***
+         * Implementing ActionListeners for buttons in the GUI
+         */
+
         selectBOInput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -146,6 +151,12 @@ public class MainGUI {
         });
     }
 
+
+    /***
+     * Reading BO report from the file
+     * File is being validated by comparing headers
+     */
+
     private void loadBO() {
         logActivity("Loading file \"" + BOReport.getName() + "\" ........");
         setProgressStatus(BO_progress_label, ProgressStatus.LOADING);
@@ -158,6 +169,7 @@ public class MainGUI {
             String line = null;
 
             line = reader.readLine();
+//            System.out.println(line);
 
             if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
                 logActivity("........ File headers match: OK ........");
@@ -199,11 +211,21 @@ public class MainGUI {
         label.setForeground(status.getColor());
     }
 
+
+    /***
+     * Saving all results
+     */
+
     private void saveResults() {
         setProgressStatus(saving_progress_label, ProgressStatus.SAVING);
         logActivity("Saving the results in: " + saveFile.getAbsolutePath());
         printLogToFile();
     }
+
+
+    /***
+     * Printing actionLog to file into location provided by user (saveFile)
+     */
 
     private void printLogToFile() {
         try {
@@ -228,6 +250,12 @@ public class MainGUI {
         }
     }
 
+
+    /***
+     * Logging activity to be displayed in the GUI JTextArea and to be saved to ArrayList actionLog
+     * @param log
+     */
+
     private void logActivity(String log) {
         processingLog.append("\n" + log);
         actionLog.add(getTime() + log);
@@ -239,6 +267,11 @@ public class MainGUI {
         return dateFormat.format(date) + " - ";
     }
 
+
+    /***
+     * Initializing GUI
+     */
+
     private void initGUI() {
         frame = new JFrame("MainGUI");
         frame.setContentPane(mainPanel);
@@ -249,14 +282,4 @@ public class MainGUI {
         frame.setVisible(true);
     }
 
-
-//    public static void main(String[] args) {
-//        JFrame frame = new JFrame("MainGUI");
-//        frame.setContentPane(new MainGUI().mainPanel);
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.pack();
-//        frame.setSize(500, 650);
-//        frame.setResizable(false);
-//        frame.setVisible(true);
-//    }
 }
