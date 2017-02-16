@@ -23,13 +23,13 @@ public class MainGUI {
     int n;
 
     private JProgressBar BOprogressBar;
-    private JProgressBar anagraficheProgressBar;
-    private JProgressBar otherProgressBar;
+    private JProgressBar reportGeneraleProgressBar;
+    private JProgressBar reportStatoClientiProgressBar;
     private JProgressBar savingProgressBar;
     private JProgressBar calculationProgressBar;
     private JButton selectBOInput_button;
-    private JButton selectAnagraficheInput_button;
-    private JButton selectOtherInput_button;
+    private JButton selectReportGeneraleInput_button;
+    private JButton selectReportStatoClientiInput_button;
     private JButton selectOutput_button;
     private JButton calculate_button;
     private JPanel mainPanel;
@@ -38,28 +38,28 @@ public class MainGUI {
     private JLabel selectInputFile3;
     private JLabel selectOutputFile;
     private JLabel BO_progress_label;
-    private JLabel anagrafiche_progress_label;
-    private JLabel other_progress_label;
+    private JLabel reportGenerale_progress_label;
+    private JLabel reportStatoClienti_progress_label;
     private JLabel saving_progress_label;
     private JLabel calculation_progress_label;
     private JTextArea processingLog;
     private JPanel BOInput_panel;
     private JLabel BOInput_path_label;
-    private JPanel AnagraficheInput_panel;
-    private JLabel AnagraficheInput_path_label;
-    private JPanel otherInput_panel;
-    private JLabel otherInput_path_label;
+    private JPanel reportGeneraleInput_panel;
+    private JLabel reportGeneraleInput_path_label;
+    private JPanel reportStatoClientiInput_panel;
+    private JLabel reportStatoClientiInput_path_label;
     private JPanel save_panel;
     private JLabel selectSave_path_label;
 
     private JFileChooser selectBOInput;
-    private JFileChooser selectAnagraficheInput;
-    private JFileChooser selectOtherInput;
+    private JFileChooser selectReportGeneraleInput;
+    private JFileChooser selectReportStatoClientiInput;
     private JFileChooser selectSave;
 
     private File BOReport;
-    private File anagraficheReport;
-    private File otherReport;
+    private File ReportGenerale;
+    private File ReportStatoClienti;
     private File saveFile;
 
     public MainGUI() {
@@ -84,36 +84,36 @@ public class MainGUI {
             }
         });
 
-        selectAnagraficheInput_button.addActionListener(new ActionListener() {
+        selectReportGeneraleInput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectAnagraficheInput = new JFileChooser();
-                selectAnagraficheInput.changeToParentDirectory();
-                int returnVal = selectAnagraficheInput.showOpenDialog(AnagraficheInput_panel);
+                selectReportGeneraleInput = new JFileChooser();
+                selectReportGeneraleInput.changeToParentDirectory();
+                int returnVal = selectReportGeneraleInput.showOpenDialog(reportGeneraleInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    anagraficheReport = selectAnagraficheInput.getSelectedFile();
-                    logActivity("Opening Anagrafiche: " + anagraficheReport.getAbsolutePath());
-                    AnagraficheInput_path_label.setText(anagraficheReport.getName());
-                    setProgressStatus(anagrafiche_progress_label, ProgressStatus.SELECTED);
+                    ReportGenerale = selectReportGeneraleInput.getSelectedFile();
+                    logActivity("Opening Anagrafiche: " + ReportGenerale.getAbsolutePath());
+                    reportGeneraleInput_path_label.setText(ReportGenerale.getName());
+                    setProgressStatus(reportGenerale_progress_label, ProgressStatus.SELECTED);
                 } else {
                     logActivity("Open command cancelled by user.");
                 }
             }
         });
 
-        selectOtherInput_button.addActionListener(new ActionListener() {
+        selectReportStatoClientiInput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectOtherInput = new JFileChooser();
-                selectOtherInput.changeToParentDirectory();
-                int returnVal = selectOtherInput.showOpenDialog(otherInput_panel);
+                selectReportStatoClientiInput = new JFileChooser();
+                selectReportStatoClientiInput.changeToParentDirectory();
+                int returnVal = selectReportStatoClientiInput.showOpenDialog(reportStatoClientiInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    otherReport = selectOtherInput.getSelectedFile();
-                    logActivity("Opening other: " + otherReport.getAbsolutePath());
-                    otherInput_path_label.setText(otherReport.getName());
-                    setProgressStatus(other_progress_label, ProgressStatus.SELECTED);
+                    ReportStatoClienti = selectReportStatoClientiInput.getSelectedFile();
+                    logActivity("Opening other: " + ReportStatoClienti.getAbsolutePath());
+                    reportStatoClientiInput_path_label.setText(ReportStatoClienti.getName());
+                    setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.SELECTED);
                 } else {
                     logActivity("Open command cancelled by user.");
                 }
