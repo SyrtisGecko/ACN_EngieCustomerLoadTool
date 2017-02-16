@@ -3,9 +3,7 @@ import cosmetics.ProgressStatus;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -138,7 +136,7 @@ public class MainGUI {
         calculate_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                loadBO();
+                loadBO();
 //                loadAnagrafiche();
 //                loadOther();
 //                calculateReports();
@@ -147,12 +145,55 @@ public class MainGUI {
         });
     }
 
+    private void loadBO() {
+        logActivity("Loading file " + BOReport.getName() + " ........");
+        setProgressStatus(BO_progress_label, ProgressStatus.LOADING);
+
+        try {
+//            File myFile = new File("Macierz.txt");
+            FileReader fileReader = new FileReader(BOReport);
+            BufferedReader reader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            line = reader.readLine();
+            System.out.println(line);
+            /*w = Integer.parseInt(reader.readLine());
+            //System.out.println(w);
+            k = Integer.parseInt(reader.readLine());
+            //System.out.println(k);
+
+            tab2d = new double[w][k];
+
+            for(int i=0; i<w; i++) {
+                line = reader.readLine(); //System.out.println(line);
+
+                line = line.trim();
+                String[] result = line.split("\\s+");
+                for(int j=0; j<k; j++){
+
+                    tab2d[i][j] = Double.parseDouble(result[j]);
+
+                }
+
+            }*/
+
+
+            reader.close();
+
+        } catch(Exception ex) {
+            System.out.println("Nie można odczytać pliku");
+            ex.printStackTrace();
+        }
+    }
+
     private void setProgressStatus(JLabel label, ProgressStatus status) {
         label.setText(status.getStatus());
         label.setForeground(status.getColor());
     }
 
     private void saveResults() {
+        setProgressStatus(saving_progress_label, ProgressStatus.SAVING);
         logActivity("Saving the results in: " + saveFile.getAbsolutePath());
         printLogToFile();
     }
@@ -160,15 +201,19 @@ public class MainGUI {
     private void printLogToFile() {
         try {
             Iterator iterator = actionLog.iterator();
+
             DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
             Date date = new Date();
+
             PrintWriter writer = new PrintWriter(saveFile.getPath() + "\\" + dateFormat.format(date) + " log.txt");
             writer.println("ACN Engie customer load tool log");
+
             while (iterator.hasNext()) {
                 writer.println(iterator.next());
-//                System.out.println(iterator.next());
             }
+
             writer.close();
+
         } catch(IOException ex) {
             System.out.println("File cannot be saved");
             logActivity("Log file cannot be saved...");
