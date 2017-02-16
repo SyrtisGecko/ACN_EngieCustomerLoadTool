@@ -1,3 +1,5 @@
+import cosmetics.ProgressStatus;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -75,6 +77,7 @@ public class MainGUI {
                     BOReport = selectBOInput.getSelectedFile();
                     logActivity("Opening BO: " + BOReport.getAbsolutePath());
                     BOInput_path_label.setText(BOReport.getName());
+                    setProgressStatus(BO_progress_label, ProgressStatus.SELECTED);
                 } else {
                     logActivity("Open command cancelled by user.");
                 }
@@ -92,6 +95,7 @@ public class MainGUI {
                     anagraficheReport = selectAnagraficheInput.getSelectedFile();
                     logActivity("Opening Anagrafiche: " + anagraficheReport.getAbsolutePath());
                     AnagraficheInput_path_label.setText(anagraficheReport.getName());
+                    setProgressStatus(anagrafiche_progress_label, ProgressStatus.SELECTED);
                 } else {
                     logActivity("Open command cancelled by user.");
                 }
@@ -109,6 +113,7 @@ public class MainGUI {
                     otherReport = selectOtherInput.getSelectedFile();
                     logActivity("Opening other: " + otherReport.getAbsolutePath());
                     otherInput_path_label.setText(otherReport.getName());
+                    setProgressStatus(other_progress_label, ProgressStatus.SELECTED);
                 } else {
                     logActivity("Open command cancelled by user.");
                 }
@@ -126,6 +131,7 @@ public class MainGUI {
                     saveFile = selectSave.getSelectedFile();
                     logActivity("Choosing save location: " + saveFile.getAbsolutePath());
                     selectSave_path_label.setText(saveFile.getPath());
+                    setProgressStatus(saving_progress_label, ProgressStatus.SELECTED);
                 }
             }
         });
@@ -139,6 +145,11 @@ public class MainGUI {
                 saveResults();
             }
         });
+    }
+
+    private void setProgressStatus(JLabel label, ProgressStatus status) {
+        label.setText(status.getStatus());
+        label.setForeground(status.getColor());
     }
 
     private void saveResults() {
@@ -160,6 +171,7 @@ public class MainGUI {
             writer.close();
         } catch(IOException ex) {
             System.out.println("File cannot be saved");
+            logActivity("Log file cannot be saved...");
             ex.printStackTrace();
         }
     }
