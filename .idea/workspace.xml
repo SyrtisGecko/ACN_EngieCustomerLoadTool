@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7da70f2-b786-4c2a-a669-c0b64ce2ec65" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,21 +61,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportGeneraleRecord.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReportGeneraleRecord.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="359">
+              <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportStatoClientiRecord.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReportStatoClientiRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,8 +124,8 @@
         <option value="$PROJECT_DIR$/src/reportRecords/BORecord.java" />
         <option value="$PROJECT_DIR$/src/MainGUI.java" />
         <option value="$PROJECT_DIR$/src/cosmetics/ReportHeaders.java" />
-        <option value="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" />
+        <option value="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
       </list>
     </option>
   </component>
@@ -638,6 +638,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/reportRecords/BORecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -648,16 +656,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="359">
+          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
           <folding />
         </state>
       </provider>

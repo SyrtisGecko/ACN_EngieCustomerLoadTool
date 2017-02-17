@@ -6,6 +6,6 @@ package reportRecords;
 public class ReportStatoClientiRecord {
 
     public ReportStatoClientiRecord(String record) {
-        
+
     }
 }
