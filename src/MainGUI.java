@@ -143,12 +143,71 @@ public class MainGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 loadBO();
-//                loadAnagrafiche();
-//                loadOther();
+                loadReportGenerale();
+                loadReportStatoClienti();
 //                calculateReports();
                 saveResults();
             }
         });
+    }
+
+    private void loadReportStatoClienti() {
+        logActivity("Loading file \"" + BOReport.getName() + "\" ........");
+        setProgressStatus(BO_progress_label, ProgressStatus.LOADING);
+
+        try {
+//            File myFile = new File("Macierz.txt");
+            FileReader fileReader = new FileReader(BOReport);
+            BufferedReader reader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            line = reader.readLine();
+//            System.out.println(line);
+
+            if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
+                logActivity("........ File headers match: OK ........");
+            } else {
+                logActivity("........ File headers match: FAIL ........");
+                setProgressStatus(BO_progress_label, ProgressStatus.ERROR);
+            }
+
+
+            reader.close();
+
+        } catch(Exception ex) {
+            System.out.println("Nie można odczytać pliku");
+            ex.printStackTrace();
+        }
+    }
+
+    private void loadReportGenerale() {
+        logActivity("Loading file \"" + ReportGenerale.getName() + "\" ........");
+        setProgressStatus(reportGenerale_progress_label, ProgressStatus.LOADING);
+
+        try {
+            FileReader fileReader = new FileReader(ReportGenerale);
+            BufferedReader reader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            line = reader.readLine();
+            System.out.println(line);
+
+            if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
+                logActivity("........ File headers match: OK ........");
+            } else {
+                logActivity("........ File headers match: FAIL ........");
+                setProgressStatus(BO_progress_label, ProgressStatus.ERROR);
+            }
+
+
+            reader.close();
+
+        } catch(Exception ex) {
+            System.out.println("Nie można odczytać pliku");
+            ex.printStackTrace();
+        }
     }
 
 
