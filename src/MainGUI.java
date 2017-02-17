@@ -152,31 +152,29 @@ public class MainGUI {
     }
 
     private void loadReportStatoClienti() {
-        logActivity("Loading file \"" + BOReport.getName() + "\" ........");
-        setProgressStatus(BO_progress_label, ProgressStatus.LOADING);
+        logActivity("Loading file \"" + ReportStatoClienti.getName() + "\" ........");
+        setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.LOADING);
 
         try {
-//            File myFile = new File("Macierz.txt");
-            FileReader fileReader = new FileReader(BOReport);
+            FileReader fileReader = new FileReader(ReportStatoClienti);
             BufferedReader reader = new BufferedReader(fileReader);
 
             String line = null;
 
             line = reader.readLine();
-//            System.out.println(line);
 
-            if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
+            if(line.equals(ReportHeaders.REPORT_STATO_CLIENTI_HEADER)) {
                 logActivity("........ File headers match: OK ........");
             } else {
                 logActivity("........ File headers match: FAIL ........");
-                setProgressStatus(BO_progress_label, ProgressStatus.ERROR);
+                setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.ERROR);
             }
 
 
             reader.close();
 
         } catch(Exception ex) {
-            System.out.println("Nie można odczytać pliku");
+            System.out.println("Selected file cannot be read");
             ex.printStackTrace();
         }
     }
@@ -192,20 +190,19 @@ public class MainGUI {
             String line = null;
 
             line = reader.readLine();
-            System.out.println(line);
 
-            if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
+            if(line.equals(ReportHeaders.REPORT_GENERALE_HEADER)) {
                 logActivity("........ File headers match: OK ........");
             } else {
                 logActivity("........ File headers match: FAIL ........");
-                setProgressStatus(BO_progress_label, ProgressStatus.ERROR);
+                setProgressStatus(reportGenerale_progress_label, ProgressStatus.ERROR);
             }
 
 
             reader.close();
 
         } catch(Exception ex) {
-            System.out.println("Nie można odczytać pliku");
+            System.out.println("Selected file cannot be read");
             ex.printStackTrace();
         }
     }
@@ -260,7 +257,7 @@ public class MainGUI {
             reader.close();
 
         } catch(Exception ex) {
-            System.out.println("Nie można odczytać pliku");
+            System.out.println("Selected file cannot be read");
             ex.printStackTrace();
         }
     }

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7da70f2-b786-4c2a-a669-c0b64ce2ec65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/cosmetics/ReportHeaders.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/cosmetics/ReportHeaders.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainGUI.java" afterPath="$PROJECT_DIR$/src/MainGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cosmetics/ReportHeaders.java" afterPath="$PROJECT_DIR$/src/cosmetics/ReportHeaders.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="194" column="37" lean-forward="true" selection-start-line="194" selection-start-column="37" selection-end-line="194" selection-end-column="37" />
+            <state relative-caret-position="1821">
+              <caret line="259" column="61" lean-forward="false" selection-start-line="259" selection-start-column="61" selection-end-line="259" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,8 +47,8 @@
       <file leaf-file-name="ReportHeaders.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cosmetics/ReportHeaders.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -61,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportGeneraleRecord.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReportGeneraleRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="359">
@@ -122,10 +125,10 @@
         <option value="$PROJECT_DIR$/src/cosmetics/ProgressStatus.java" />
         <option value="$PROJECT_DIR$/src/MainGUI.form" />
         <option value="$PROJECT_DIR$/src/reportRecords/BORecord.java" />
-        <option value="$PROJECT_DIR$/src/MainGUI.java" />
-        <option value="$PROJECT_DIR$/src/cosmetics/ReportHeaders.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
+        <option value="$PROJECT_DIR$/src/cosmetics/ReportHeaders.java" />
+        <option value="$PROJECT_DIR$/src/MainGUI.java" />
       </list>
     </option>
   </component>
@@ -620,24 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cosmetics/ReportHeaders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="194" column="37" lean-forward="true" selection-start-line="194" selection-start-column="37" selection-end-line="194" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -659,6 +644,24 @@
         <state relative-caret-position="359">
           <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cosmetics/ReportHeaders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1821">
+          <caret line="259" column="61" lean-forward="false" selection-start-line="259" selection-start-column="61" selection-end-line="259" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
