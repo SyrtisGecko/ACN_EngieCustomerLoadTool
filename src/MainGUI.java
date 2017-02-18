@@ -242,17 +242,26 @@ public class MainGUI {
             FileReader fileReader = new FileReader(BOReport);
             BufferedReader reader = new BufferedReader(fileReader);
 
+            int rows = countRows(BOReport);
+            BOprogressBar.setMaximum(rows);
+            int progress = 0;
+
             String line = "";
             rawDataBO = new ArrayList<>();
 
+            System.out.println(rows);
             line = reader.readLine();
+            BOprogressBar.setValue(++progress);
 
             if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
                 logActivity("........ File headers match: OK ........");
 
-                line = reader.readLine();
-                String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-                rawDataBO.add(new BORecord(record));
+                for(int i = 1; i <= rows-1; i++) {
+                    line = reader.readLine();
+                    BOprogressBar.setValue(++progress);
+                    String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+                    rawDataBO.add(new BORecord(record));
+                }
 
             } else {
                 logActivity("........ File headers match: FAIL ........");
@@ -260,25 +269,7 @@ public class MainGUI {
             }
 
             System.out.println(rawDataBO.get(0).getSomeStrings());
-            /*w = Integer.parseInt(reader.readLine());
-            //System.out.println(w);
-            k = Integer.parseInt(reader.readLine());
-            //System.out.println(k);
-
-            tab2d = new double[w][k];
-
-            for(int i=0; i<w; i++) {
-                line = reader.readLine(); //System.out.println(line);
-
-                line = line.trim();
-                String[] result = line.split("\\s+");
-                for(int j=0; j<k; j++){
-
-                    tab2d[i][j] = Double.parseDouble(result[j]);
-
-                }
-
-            }*/
+            System.out.println(rawDataBO.get(48380).getSomeStrings());
 
 
             reader.close();
@@ -287,6 +278,28 @@ public class MainGUI {
             System.out.println("Selected file cannot be read");
             ex.printStackTrace();
         }
+    }
+
+    private int countRows(File report) {
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader(report);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        BufferedReader reader = new BufferedReader(fileReader);
+
+        int n = 0;
+        try {
+            while(reader.readLine() != null) {
+                n++;
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return n;
     }
 
     private void setProgressStatus(JLabel label, ProgressStatus status) {
