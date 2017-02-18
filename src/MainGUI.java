@@ -22,7 +22,6 @@ public class MainGUI {
     JFrame frame;
     
     ArrayList<String> actionLog;
-    int n;
 
     private JProgressBar BOprogressBar;
     private JProgressBar reportGeneraleProgressBar;
@@ -187,6 +186,7 @@ public class MainGUI {
                     rawDataReportStatoClienti.add(new ReportStatoClientiRecord(record));
                 }
 
+                logActivity("Loaded << " + (progress-1) + " >> records ........");
                 logActivity("Loading finished .........................");
                 setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.DONE);
 
@@ -236,6 +236,7 @@ public class MainGUI {
                     rawDataReportGenerale.add(new ReportGeneraleRecord(record));
                 }
 
+                logActivity("Loaded << " + (progress-1) + " >> records ........");
                 logActivity("Loading finished .........................");
                 setProgressStatus(reportGenerale_progress_label, ProgressStatus.DONE);
 
@@ -291,6 +292,7 @@ public class MainGUI {
                     rawDataBO.add(new BORecord(record));
                 }
 
+                logActivity("Loaded << " + (progress-1) + " >> records ........");
                 logActivity("Loading finished .........................");
                 setProgressStatus(BO_progress_label, ProgressStatus.DONE);
 
