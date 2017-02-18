@@ -1,5 +1,6 @@
 import cosmetics.ProgressStatus;
 import cosmetics.ReportHeaders;
+import reportRecords.ReportGeneraleRecord;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -61,6 +62,8 @@ public class MainGUI {
     private File ReportStatoClienti;
     private File saveFile;
 
+    private ArrayList<ReportGeneraleRecord> rawDataReportGenerale;
+
     public MainGUI() {
         initGUI();
         actionLog = new ArrayList<>();
@@ -97,7 +100,7 @@ public class MainGUI {
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     ReportGenerale = selectReportGeneraleInput.getSelectedFile();
-                    logActivity("Opening Anagrafiche: " + ReportGenerale.getAbsolutePath());
+                    logActivity("Opening Report Generale: " + ReportGenerale.getAbsolutePath());
                     reportGeneraleInput_path_label.setText(ReportGenerale.getName());
                     setProgressStatus(reportGenerale_progress_label, ProgressStatus.SELECTED);
                 } else {
@@ -115,7 +118,7 @@ public class MainGUI {
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
                     ReportStatoClienti = selectReportStatoClientiInput.getSelectedFile();
-                    logActivity("Opening other: " + ReportStatoClienti.getAbsolutePath());
+                    logActivity("Opening Report Stato Clienti: " + ReportStatoClienti.getAbsolutePath());
                     reportStatoClientiInput_path_label.setText(ReportStatoClienti.getName());
                     setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.SELECTED);
                 } else {
@@ -159,7 +162,7 @@ public class MainGUI {
             FileReader fileReader = new FileReader(ReportStatoClienti);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            String line = null;
+            String line = "";
 
             line = reader.readLine();
 
@@ -187,17 +190,24 @@ public class MainGUI {
             FileReader fileReader = new FileReader(ReportGenerale);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            String line = null;
+            String line = "";
+            rawDataReportGenerale = new ArrayList<>();
 
             line = reader.readLine();
 
             if(line.equals(ReportHeaders.REPORT_GENERALE_HEADER)) {
                 logActivity("........ File headers match: OK ........");
+
+                line = reader.readLine();
+                String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+                rawDataReportGenerale.add(new ReportGeneraleRecord(record));
+
             } else {
                 logActivity("........ File headers match: FAIL ........");
                 setProgressStatus(reportGenerale_progress_label, ProgressStatus.ERROR);
             }
 
+            System.out.println(rawDataReportGenerale.get(0).getSomeStrings());
 
             reader.close();
 
@@ -218,14 +228,12 @@ public class MainGUI {
         setProgressStatus(BO_progress_label, ProgressStatus.LOADING);
 
         try {
-//            File myFile = new File("Macierz.txt");
             FileReader fileReader = new FileReader(BOReport);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            String line = null;
+            String line = "";
 
             line = reader.readLine();
-//            System.out.println(line);
 
             if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
                 logActivity("........ File headers match: OK ........");
