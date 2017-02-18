@@ -173,11 +173,17 @@ public class MainGUI {
 
             if(line.equals(ReportHeaders.REPORT_STATO_CLIENTI_HEADER)) {
                 logActivity("........ File headers match: OK ........");
+
+                line = reader.readLine();
+                String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+                rawDataReportStatoClienti.add(new ReportStatoClientiRecord(record));
+
             } else {
                 logActivity("........ File headers match: FAIL ........");
                 setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.ERROR);
             }
 
+            System.out.println(rawDataReportStatoClienti.get(0).getSomeStrings());
 
             reader.close();
 
