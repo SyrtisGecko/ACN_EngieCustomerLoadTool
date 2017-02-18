@@ -24,7 +24,30 @@ public class BORecord {
     private String uplineRVP;
     private String cstCUID;
 
-    public BORecord(String record) {
+    public BORecord(String[] record) {
 
+        cstAccount = record[0];
+        cstName = record[1];
+        cstServiceType = record[2];
+        cstVIPStatus = record[3];
+        cstProviderStatus = record[4];
+        cstProductCode = record[5];
+        cstAddressStreet = record[6];
+        cstAddressCity = record[7];
+        cstAddressPostalCode = record[8];
+        cstCountry = record[9];
+        cstVIPStartDate = record[12];
+        cstOrderEntryDate = record[13];
+        scheduledPurgeDate = record[14];
+        cstPurgedDate = record[15];
+        repTeamID = record[16];
+        uplineTC1 = record[17];
+        uplineRVP = record[18];
+        cstCUID = record[19];
+
+    }
+
+    public String getSomeStrings() {
+        return cstAccount + " " + cstName + " " + cstVIPStatus + " " + cstVIPStartDate + " " + cstCUID;
     }
 }

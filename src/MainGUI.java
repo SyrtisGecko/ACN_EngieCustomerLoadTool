@@ -1,6 +1,8 @@
 import cosmetics.ProgressStatus;
 import cosmetics.ReportHeaders;
+import reportRecords.BORecord;
 import reportRecords.ReportGeneraleRecord;
+import reportRecords.ReportStatoClientiRecord;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -62,7 +64,9 @@ public class MainGUI {
     private File ReportStatoClienti;
     private File saveFile;
 
+    private ArrayList<BORecord> rawDataBO;
     private ArrayList<ReportGeneraleRecord> rawDataReportGenerale;
+    private ArrayList<ReportStatoClientiRecord> rawDataReportStatoClienti;
 
     public MainGUI() {
         initGUI();
@@ -163,6 +167,7 @@ public class MainGUI {
             BufferedReader reader = new BufferedReader(fileReader);
 
             String line = "";
+            rawDataReportStatoClienti = new ArrayList<>();
 
             line = reader.readLine();
 
@@ -232,15 +237,23 @@ public class MainGUI {
             BufferedReader reader = new BufferedReader(fileReader);
 
             String line = "";
+            rawDataBO = new ArrayList<>();
 
             line = reader.readLine();
 
             if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
                 logActivity("........ File headers match: OK ........");
+
+                line = reader.readLine();
+                String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+                rawDataBO.add(new BORecord(record));
+
             } else {
                 logActivity("........ File headers match: FAIL ........");
                 setProgressStatus(BO_progress_label, ProgressStatus.ERROR);
             }
+
+            System.out.println(rawDataBO.get(0).getSomeStrings());
             /*w = Integer.parseInt(reader.readLine());
             //System.out.println(w);
             k = Integer.parseInt(reader.readLine());
