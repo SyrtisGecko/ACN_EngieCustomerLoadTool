@@ -166,24 +166,38 @@ public class MainGUI {
             FileReader fileReader = new FileReader(ReportStatoClienti);
             BufferedReader reader = new BufferedReader(fileReader);
 
+            int rows = countRows(ReportStatoClienti) - 7;
+            reportStatoClientiProgressBar.setMaximum(rows);
+            int progress = 0;
+
             String line = "";
             rawDataReportStatoClienti = new ArrayList<>();
 
+            System.out.println(rows);
             line = reader.readLine();
+            reportStatoClientiProgressBar.setValue(progress++);
 
             if(line.equals(ReportHeaders.REPORT_STATO_CLIENTI_HEADER)) {
                 logActivity("........ File headers match: OK ........");
 
-                line = reader.readLine();
-                String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-                rawDataReportStatoClienti.add(new ReportStatoClientiRecord(record));
+                for(int i = 1; i <= rows-1; i++) {
+                    line = reader.readLine();
+                    reportStatoClientiProgressBar.setValue(progress++);
+                    String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+                    rawDataReportStatoClienti.add(new ReportStatoClientiRecord(record));
+                }
+
+                logActivity("Loading finished .........................");
+                setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.DONE);
 
             } else {
                 logActivity("........ File headers match: FAIL ........");
+                logActivity("Loading failed ...........................");
                 setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.ERROR);
             }
 
             System.out.println(rawDataReportStatoClienti.get(0).getSomeStrings());
+            System.out.println(rawDataReportStatoClienti.get(28583).getSomeStrings());
 
             reader.close();
 
@@ -201,24 +215,38 @@ public class MainGUI {
             FileReader fileReader = new FileReader(ReportGenerale);
             BufferedReader reader = new BufferedReader(fileReader);
 
+            int rows = countRows(ReportGenerale) - 7;
+            reportGeneraleProgressBar.setMaximum(rows);
+            int progress = 0;
+
             String line = "";
             rawDataReportGenerale = new ArrayList<>();
 
+            System.out.println(rows);
             line = reader.readLine();
+            reportGeneraleProgressBar.setValue(progress++);
 
             if(line.equals(ReportHeaders.REPORT_GENERALE_HEADER)) {
                 logActivity("........ File headers match: OK ........");
 
-                line = reader.readLine();
-                String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-                rawDataReportGenerale.add(new ReportGeneraleRecord(record));
+                for(int i = 1; i <= rows-1; i++) {
+                    line = reader.readLine();
+                    reportGeneraleProgressBar.setValue(progress++);
+                    String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+                    rawDataReportGenerale.add(new ReportGeneraleRecord(record));
+                }
+
+                logActivity("Loading finished .........................");
+                setProgressStatus(reportGenerale_progress_label, ProgressStatus.DONE);
 
             } else {
                 logActivity("........ File headers match: FAIL ........");
+                logActivity("Loading failed ...........................");
                 setProgressStatus(reportGenerale_progress_label, ProgressStatus.ERROR);
             }
 
             System.out.println(rawDataReportGenerale.get(0).getSomeStrings());
+            System.out.println(rawDataReportGenerale.get(3578).getSomeStrings());
 
             reader.close();
 
@@ -251,20 +279,24 @@ public class MainGUI {
 
             System.out.println(rows);
             line = reader.readLine();
-            BOprogressBar.setValue(++progress);
+            BOprogressBar.setValue(progress++);
 
             if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
                 logActivity("........ File headers match: OK ........");
 
                 for(int i = 1; i <= rows-1; i++) {
                     line = reader.readLine();
-                    BOprogressBar.setValue(++progress);
+                    BOprogressBar.setValue(progress++);
                     String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
                     rawDataBO.add(new BORecord(record));
                 }
 
+                logActivity("Loading finished .........................");
+                setProgressStatus(BO_progress_label, ProgressStatus.DONE);
+
             } else {
                 logActivity("........ File headers match: FAIL ........");
+                logActivity("Loading failed ...........................");
                 setProgressStatus(BO_progress_label, ProgressStatus.ERROR);
             }
 
@@ -273,6 +305,7 @@ public class MainGUI {
 
 
             reader.close();
+
 
         } catch(Exception ex) {
             System.out.println("Selected file cannot be read");

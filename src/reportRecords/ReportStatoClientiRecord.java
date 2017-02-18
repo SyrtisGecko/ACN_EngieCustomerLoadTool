@@ -47,12 +47,23 @@ public class ReportStatoClientiRecord {
         moduloVenditoreCodice = record[15];
         statoFornituraEE = record[16];
         statoFornituraGAS = record[17];
-        dataAttivazione = record[18];
-        dataCessazione = record[19];
-        if(record.length == 21) {
-            moduloModulitaDiStipula = record[20];
-        } else {
+
+        if(record.length == 18) {
+            dataAttivazione = null;
+            dataCessazione = null;
             moduloModulitaDiStipula = null;
+        } else if(record.length == 19) {
+            dataAttivazione = record[18];
+            dataCessazione = null;
+            moduloModulitaDiStipula = null;
+        } else if(record.length == 20) {
+            dataAttivazione = record[18];
+            dataCessazione = record[19];
+            moduloModulitaDiStipula = null;
+        } else if(record.length == 21) {
+            dataAttivazione = record[18];
+            dataCessazione = record[19];
+            moduloModulitaDiStipula = record[20];
         }
 
     }
