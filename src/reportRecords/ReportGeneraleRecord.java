@@ -1,5 +1,9 @@
 package reportRecords;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by Przemek on 2017-02-17.
  */
@@ -189,5 +193,46 @@ public class ReportGeneraleRecord {
             return "ACTIVE";
         }
         return "";
+    }
+
+    public String getCodiceVenditore() {
+        return codiceVenditore;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCognomeOrCompany() {
+        if(tipoCliente.equals("Business")) {
+            String company = regioneSociale.substring(0, 20);
+            return company;
+        } else {
+            return cognome;
+        }
+    }
+
+    public String getStartDate() {
+        return dataInserimento.substring(6, 10) + "-" + dataInserimento.substring(3, 5) + "-" + dataInserimento.substring(0, 2);
+    }
+
+    public String getIndirizzo() {
+        return indirizzo;
+    }
+
+    public String getNumeroCivico() {
+        return numeroCivico;
+    }
+
+    public String getComune() {
+        return comune;
+    }
+
+    public String getCap() {
+        return cap;
+    }
+
+    public String getNomeProdotto() {
+        return nomeProdotto;
     }
 }
