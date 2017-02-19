@@ -31,11 +31,12 @@ public class XMLgenerator {
     }
 
     public void addTransaction(ReportGeneraleRecord record) {
-        int n = (transactionCount * 3) + 1;
-        XMLtemplate.add(n++, "<transaction id-type=\"VENDOR-CUSTOMER\" id=\"1010101\" seq=\"" + ++transactionCount + "\">");
+        int n = (transactionCount * 5) + 1;
+        XMLtemplate.add(n++, "<transaction id-type=\"VENDOR-CUSTOMER\" id=\"" + record.checkModuloWeb() + "\" seq=\"" + ++transactionCount + "\">");
+        XMLtemplate.add(n++, "<customer service=\"" + record.checkServiceCode() + "\" country=\"IT\" action=\"CHANGE\">");
         XMLtemplate.add(n++, "<idModulo>" + record.getIdModulo() + "</idModulo>");
+        XMLtemplate.add(n++, "</customer>");
         XMLtemplate.add(n++, "</transaction>");
-//        transactionCount++;
     }
 
     public void saveXMLtemplate(String path) {

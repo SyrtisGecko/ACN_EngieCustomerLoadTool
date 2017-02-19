@@ -354,6 +354,10 @@ public class MainGUI {
         XMLgenerator newOrdersXML = new XMLgenerator(true);
         newOrdersXML.addTransaction(rawDataReportGenerale.get(0));
         newOrdersXML.addTransaction(rawDataReportGenerale.get(3578));
+        newOrdersXML.addTransaction(rawDataReportGenerale.get(3573));
+        newOrdersXML.addTransaction(rawDataReportGenerale.get(3572));
+        newOrdersXML.addTransaction(rawDataReportGenerale.get(3561));
+        newOrdersXML.addTransaction(rawDataReportGenerale.get(3553));
         newOrdersXML.saveXMLtemplate(saveFile.getPath());
 
         printLogToFile();

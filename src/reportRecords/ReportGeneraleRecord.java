@@ -111,4 +111,62 @@ public class ReportGeneraleRecord {
     public String getSomeStrings() {
         return idModulo + " " + moduloWeb + " " + codiceModulo + " " + dataInserimento + " " + consumoAnnuoPresunto + " " + causaleRettifica;
     }
+
+    public String checkModuloWeb() {
+        if(tipoCliente.equals("Business")) {
+            if(tipoTicket.equals("Gas")) {
+                return moduloWeb + "G";
+            } else {
+                return moduloWeb + "E";
+            }
+        } else {
+            return moduloWeb;
+        }
+    }
+
+    public String checkServiceCode() {
+        String addition = null;
+
+        if(tipoCliente.equals("Business")) {
+            if (!potenza.equals("")) {
+
+                String s = potenza;
+                s = s.replace("\"", "");
+                s = s.replace(",", ".");
+
+                float p = Float.parseFloat(s);
+
+                if (p < 4.5) {
+                    addition = "BS1";
+                } else if (p > 16.5) {
+                    addition = "BS3";
+                } else {
+                    addition = "BS2";
+                }
+            } else {
+                String s = consumoAnnuoPresunto;
+                s = s.replace("\"", "");
+                s = s.replace(",", ".");
+
+                float c = Float.parseFloat(s);
+
+                if(c < 500.00) {
+                    addition = "BS4";
+                } else if(c > 5000) {
+                    addition = "BS6";
+                } else {
+                    addition = "BS5";
+                }
+            }
+        } else {
+            if(tipoTicket.equals("Gas")) {
+                addition = "GAS";
+            } else if(tipoTicket.equals("Elettrica")) {
+                addition = "ELE";
+            } else {
+                addition = "DUA";
+            }
+        }
+        return "ENE-SW-" + addition;
+    }
 }
