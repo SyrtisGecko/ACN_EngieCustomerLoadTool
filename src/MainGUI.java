@@ -350,6 +350,12 @@ public class MainGUI {
     private void saveResults() {
         setProgressStatus(saving_progress_label, ProgressStatus.SAVING);
         logActivity("Saving the results in: " + saveFile.getAbsolutePath());
+
+        XMLgenerator newOrdersXML = new XMLgenerator(true);
+        newOrdersXML.addTransaction(rawDataReportGenerale.get(0));
+        newOrdersXML.addTransaction(rawDataReportGenerale.get(3578));
+        newOrdersXML.saveXMLtemplate(saveFile.getPath());
+
         printLogToFile();
     }
 

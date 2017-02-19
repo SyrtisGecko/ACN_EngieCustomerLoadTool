@@ -104,6 +104,10 @@ public class ReportGeneraleRecord {
 
     }
 
+    public String getIdModulo() {
+        return idModulo;
+    }
+
     public String getSomeStrings() {
         return idModulo + " " + moduloWeb + " " + codiceModulo + " " + dataInserimento + " " + consumoAnnuoPresunto + " " + causaleRettifica;
     }
