@@ -104,10 +104,6 @@ public class ReportGeneraleRecord {
 
     }
 
-    public String getIdModulo() {
-        return idModulo;
-    }
-
     public String getSomeStrings() {
         return idModulo + " " + moduloWeb + " " + codiceModulo + " " + dataInserimento + " " + consumoAnnuoPresunto + " " + causaleRettifica;
     }
@@ -121,6 +117,18 @@ public class ReportGeneraleRecord {
             }
         } else {
             return moduloWeb;
+        }
+    }
+
+    public String checkIdModulo() {
+        if(tipoCliente.equals("Business")) {
+            if(tipoTicket.equals("Gas")) {
+                return idModulo + "G";
+            } else {
+                return idModulo + "E";
+            }
+        } else {
+            return idModulo;
         }
     }
 
@@ -168,5 +176,18 @@ public class ReportGeneraleRecord {
             }
         }
         return "ENE-SW-" + addition;
+    }
+
+    public String getStatus() {
+        if(statoTicket.equals("NUOVA")) {
+            return "ACTIVE";
+        } else if(statoTicket.equals("ANNULLATA")) {
+            return "INCOMPLETE";
+        } else if(statoTicket.equals("RETTIFICA")) {
+            return "REVOKED";
+        } else if(statoTicket.equals("IN LAVORAZIONE")) {
+            return "ACTIVE";
+        }
+        return "";
     }
 }
