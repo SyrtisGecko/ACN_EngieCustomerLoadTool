@@ -69,7 +69,7 @@ public class ReportGeneraleRecord {
         dataInserimentoAllegato = record[9];
         cognome = record[10];
         nome = record[11];
-        regioneSociale = record[12];
+        regioneSociale = setName(record[12]);
         tipoCliente = record[13];
         tipoTicket = record[14];
         indirizzo = record[15];
@@ -108,13 +108,18 @@ public class ReportGeneraleRecord {
 
     }
 
+    private String setName(String s) {
+        return s.replace("&", "e");
+    }
+
+    // TODO remove once all is done
     public String getSomeStrings() {
         return idModulo + " " + moduloWeb + " " + codiceModulo + " " + dataInserimento + " " + consumoAnnuoPresunto + " " + causaleRettifica;
     }
 
     public String checkModuloWeb() {
         if(tipoCliente.equals("Business")) {
-            if(tipoTicket.equals("Gas")) {
+            if(tipoTicket.equals("Gas") || tipoTicket.equals("Dual Fuel [GM]")) {
                 return moduloWeb + "G";
             } else {
                 return moduloWeb + "E";
@@ -126,7 +131,7 @@ public class ReportGeneraleRecord {
 
     public String checkIdModulo() {
         if(tipoCliente.equals("Business")) {
-            if(tipoTicket.equals("Gas")) {
+            if(tipoTicket.equals("Gas") || tipoTicket.equals("Dual Fuel [GM]")) {
                 return idModulo + "G";
             } else {
                 return idModulo + "E";
@@ -234,5 +239,31 @@ public class ReportGeneraleRecord {
 
     public String getNomeProdotto() {
         return nomeProdotto;
+    }
+
+    public boolean isValid() {
+        if (!potenza.equals("")) {
+
+            String s = potenza;
+            s = s.replace("\"", "");
+            s = s.replace(",", ".");
+
+            float p = Float.parseFloat(s);
+
+            if (p > 50) {
+                return false;
+            }
+        } else {
+            String s = consumoAnnuoPresunto;
+            s = s.replace("\"", "");
+            s = s.replace(",", ".");
+
+            float c = Float.parseFloat(s);
+
+            if(c > 30000) {
+                return false;
+            }
+        }
+        return true;
     }
 }

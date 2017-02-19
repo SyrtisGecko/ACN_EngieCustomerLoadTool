@@ -358,6 +358,7 @@ public class MainGUI {
         newOrdersXML.addTransaction(rawDataReportGenerale.get(3572));
         newOrdersXML.addTransaction(rawDataReportGenerale.get(3561));
         newOrdersXML.addTransaction(rawDataReportGenerale.get(3553));
+        newOrdersXML.addTransaction(rawDataReportGenerale.get(373));
         newOrdersXML.saveXMLtemplate(saveFile.getPath());
 
         printLogToFile();
