@@ -50,4 +50,8 @@ public class BORecord {
     public String getSomeStrings() {
         return cstAccount + " " + cstName + " " + cstVIPStatus + " " + cstVIPStartDate + " " + cstCUID;
     }
+
+    public String getCstAccount() {
+        return cstAccount;
+    }
 }

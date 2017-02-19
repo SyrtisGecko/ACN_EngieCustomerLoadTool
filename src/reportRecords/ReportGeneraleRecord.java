@@ -196,6 +196,10 @@ public class ReportGeneraleRecord {
             return "REVOKED";
         } else if(statoTicket.equals("IN LAVORAZIONE")) {
             return "ACTIVE";
+        } else if(statoTicket.equals("N.D.")) {
+            return "REVOKED";
+        } else if(statoTicket.equals("COMPLETATA")) {
+            return "ACTIVE";
         }
         return "";
     }
@@ -210,7 +214,12 @@ public class ReportGeneraleRecord {
 
     public String getCognomeOrCompany() {
         if(tipoCliente.equals("Business")) {
-            String company = regioneSociale.substring(0, 20);
+            String company = null;
+            if(regioneSociale.length() > 20) {
+                company = regioneSociale.substring(0, 20);
+            } else {
+                company = regioneSociale;
+            }
             return company;
         } else {
             return cognome;

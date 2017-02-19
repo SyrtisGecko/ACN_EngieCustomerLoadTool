@@ -67,6 +67,8 @@ public class MainGUI {
     private ArrayList<ReportGeneraleRecord> rawDataReportGenerale;
     private ArrayList<ReportStatoClientiRecord> rawDataReportStatoClienti;
 
+    private XMLgenerator newOrdersLoad;
+
     public MainGUI() {
         initGUI();
         actionLog = new ArrayList<>();
@@ -151,10 +153,49 @@ public class MainGUI {
                 loadBO();
                 loadReportGenerale();
                 loadReportStatoClienti();
-//                calculateReports();
+                calculateReports();
                 saveResults();
             }
         });
+    }
+
+    private void calculateReports() {
+        searchNew();
+        searchChanges();
+        reconciliation();
+    }
+
+    private void searchNew() {
+        newOrdersLoad = new XMLgenerator(true);
+
+        Iterator iterator = rawDataReportGenerale.iterator();
+
+        while(iterator.hasNext()) {
+            ReportGeneraleRecord record = (ReportGeneraleRecord) iterator.next();
+            String id = record.checkModuloWeb();
+            boolean recordFound = false;
+
+            Iterator iter = rawDataBO.iterator();
+            while(iter.hasNext()) {
+                BORecord r = (BORecord) iter.next();
+                if(r.getCstAccount().equals(id)) {
+                    recordFound = true;
+                    break;
+                }
+            }
+
+            if(!recordFound) {
+                newOrdersLoad.addTransaction(record);
+            }
+        }
+    }
+
+    private void searchChanges() {
+
+    }
+
+    private void reconciliation() {
+        Iterator iterator = rawDataReportStatoClienti.iterator();
     }
 
     private void loadReportStatoClienti() {
@@ -351,15 +392,17 @@ public class MainGUI {
         setProgressStatus(saving_progress_label, ProgressStatus.SAVING);
         logActivity("Saving the results in: " + saveFile.getAbsolutePath());
 
-        XMLgenerator newOrdersXML = new XMLgenerator(true);
-        newOrdersXML.addTransaction(rawDataReportGenerale.get(0));
-        newOrdersXML.addTransaction(rawDataReportGenerale.get(3578));
-        newOrdersXML.addTransaction(rawDataReportGenerale.get(3573));
-        newOrdersXML.addTransaction(rawDataReportGenerale.get(3572));
-        newOrdersXML.addTransaction(rawDataReportGenerale.get(3561));
-        newOrdersXML.addTransaction(rawDataReportGenerale.get(3553));
-        newOrdersXML.addTransaction(rawDataReportGenerale.get(373));
-        newOrdersXML.saveXMLtemplate(saveFile.getPath());
+//        XMLgenerator newOrdersXML = new XMLgenerator(true);
+//        newOrdersXML.addTransaction(rawDataReportGenerale.get(0));
+//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3578));
+//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3573));
+//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3572));
+//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3561));
+//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3553));
+//        newOrdersXML.addTransaction(rawDataReportGenerale.get(373));
+//        newOrdersXML.saveXMLtemplate(saveFile.getPath());
+
+        newOrdersLoad.saveXMLtemplate(saveFile.getPath());
 
         printLogToFile();
     }
