@@ -14,6 +14,8 @@ import java.util.Iterator;
 public class XMLgenerator {
 
     private boolean newOrders;
+    private String newOrderAdd;
+
     private int transactionCount;
 
     private ArrayList<String> XMLtemplate;
@@ -22,7 +24,16 @@ public class XMLgenerator {
         this.newOrders = newOrders;
         transactionCount = 0;
         XMLtemplate = new ArrayList<>();
+        newOrderCheck();
         setupEmptyXML();
+    }
+
+    private void newOrderCheck() {
+        if(newOrders) {
+            newOrderAdd = "-1";
+        } else {
+            newOrderAdd = "-2";
+        }
     }
 
     private void setupEmptyXML() {
@@ -93,7 +104,7 @@ public class XMLgenerator {
             DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
             Date date = new Date();
 
-            PrintWriter writer = new PrintWriter(path + "\\" + dateFormat.format(date) + ".xml");
+            PrintWriter writer = new PrintWriter(path + "\\" + dateFormat.format(date) + newOrderAdd + ".xml");
 
             while (iterator.hasNext()) {
                 writer.println(iterator.next());

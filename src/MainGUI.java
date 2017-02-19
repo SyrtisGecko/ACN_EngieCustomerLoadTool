@@ -79,8 +79,8 @@ public class MainGUI {
         selectBOInput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectBOInput = new JFileChooser();
-                selectBOInput.changeToParentDirectory();
+                selectBOInput = new JFileChooser("C:\\Studia WIZ\\sem_4\\ACNtools");
+//                selectBOInput.changeToParentDirectory();
                 int returnVal = selectBOInput.showOpenDialog(BOInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -97,8 +97,8 @@ public class MainGUI {
         selectReportGeneraleInput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectReportGeneraleInput = new JFileChooser();
-                selectReportGeneraleInput.changeToParentDirectory();
+                selectReportGeneraleInput = new JFileChooser("C:\\Studia WIZ\\sem_4\\ACNtools");
+//                selectReportGeneraleInput.changeToParentDirectory();
                 int returnVal = selectReportGeneraleInput.showOpenDialog(reportGeneraleInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -115,8 +115,8 @@ public class MainGUI {
         selectReportStatoClientiInput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectReportStatoClientiInput = new JFileChooser();
-                selectReportStatoClientiInput.changeToParentDirectory();
+                selectReportStatoClientiInput = new JFileChooser("C:\\Studia WIZ\\sem_4\\ACNtools");
+//                selectReportStatoClientiInput.changeToParentDirectory();
                 int returnVal = selectReportStatoClientiInput.showOpenDialog(reportStatoClientiInput_panel);
 
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -132,8 +132,8 @@ public class MainGUI {
         selectOutput_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectSave = new JFileChooser();
-                selectSave.changeToParentDirectory();
+                selectSave = new JFileChooser("C:\\Studia WIZ\\sem_4\\ACNtools");
+//                selectSave.changeToParentDirectory();
                 selectSave.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 int returnVal = selectSave.showSaveDialog(save_panel);
 
