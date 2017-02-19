@@ -166,6 +166,7 @@ public class MainGUI {
     }
 
     private void searchNew() {
+        logActivity("Searchin for new orders ......");
         newOrdersLoad = new XMLgenerator(true);
 
         Iterator iterator = rawDataReportGenerale.iterator();
@@ -185,7 +186,12 @@ public class MainGUI {
             }
 
             if(!recordFound) {
-                newOrdersLoad.addTransaction(record);
+                if(record.isValid()) {
+                    logActivity("New order (" + record.checkModuloWeb() + ") found ....");
+                    newOrdersLoad.addTransaction(record);
+                } else {
+                    logActivity("New order (" + record.checkModuloWeb() + ") is invalid and cannot be added to the load.");
+                }
             }
         }
     }
