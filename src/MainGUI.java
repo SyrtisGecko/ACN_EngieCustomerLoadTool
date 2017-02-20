@@ -72,6 +72,7 @@ public class MainGUI {
     private ArrayList<ReportStatoClientiRecord> rawDataReportStatoClienti;
 
     private XMLgenerator newOrdersLoad;
+    private XMLgenerator changesOrdersLoad;
 
     public MainGUI() {
         initGUI();
@@ -163,6 +164,7 @@ public class MainGUI {
                     saveResults();
                 } else {
                     setProgressStatus(calculation_progress_label, ProgressStatus.ERROR);
+                    logActivity("Calculation attempt failed ..............");
                 }
             }
         });
@@ -218,6 +220,45 @@ public class MainGUI {
 
     private void searchChanges() {
 
+        logActivity("Searching for orders changes ......");
+        changesOrdersLoad = new XMLgenerator(false);
+
+        Iterator iterator = rawDataBO.iterator();
+
+        int step = rowsBO / 33;
+        int progress = 0;
+        int value = 33;
+
+        while(iterator.hasNext()) {
+            ReportGeneraleRecord record = (ReportGeneraleRecord) iterator.next();
+            String id = record.checkModuloWeb();
+            boolean recordFound = false;
+
+            Iterator iter = rawDataReportGenerale.iterator();
+            while(iter.hasNext()) {
+                BORecord r = (BORecord) iter.next();
+                if(r.getCstAccount().equals(id)) {
+                    recordFound = true;
+                    break;
+                }
+            }
+
+            progress++;
+            if(progress >= step) {
+                progress = 0;
+                value++;
+                calculationProgressBar.setValue(value);
+            }
+
+            if(!recordFound) {
+                if(record.isValid()) {
+                    logActivity("Change order (" + record.checkModuloWeb() + ") found ....");
+                    changesOrdersLoad.addTransaction(record);
+                } else {
+                    logActivity("Change order (" + record.checkModuloWeb() + ") is invalid and cannot be added to the load.");
+                }
+            }
+        }
     }
 
     private void reconciliation() {
