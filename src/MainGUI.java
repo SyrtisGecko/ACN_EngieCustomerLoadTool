@@ -154,11 +154,16 @@ public class MainGUI {
         calculate_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                loadBO();
-                loadReportGenerale();
-                loadReportStatoClienti();
-                calculateReports();
-                saveResults();
+                setProgressStatus(calculation_progress_label, ProgressStatus.PROCESSING);
+                if(BOReport != null && ReportGenerale != null) {
+                    loadBO();
+                    loadReportGenerale();
+                    loadReportStatoClienti();
+                    calculateReports();
+                    saveResults();
+                } else {
+                    setProgressStatus(calculation_progress_label, ProgressStatus.ERROR);
+                }
             }
         });
     }
@@ -216,56 +221,66 @@ public class MainGUI {
     }
 
     private void reconciliation() {
-        Iterator iterator = rawDataReportStatoClienti.iterator();
+        if(ReportStatoClienti != null) {
+            Iterator iterator = rawDataReportStatoClienti.iterator();
+        } else {
+            logActivity("Reconciliation with Report Stato Clienti was skipped ....");
+        }
     }
 
     private void loadReportStatoClienti() {
-        logActivity("Loading file \"" + ReportStatoClienti.getName() + "\" ........");
-        setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.LOADING);
 
-        try {
-            FileReader fileReader = new FileReader(ReportStatoClienti);
-            BufferedReader reader = new BufferedReader(fileReader);
+        if(ReportStatoClienti != null) {
 
-            rowsRSC = countRows(ReportStatoClienti) - 7;
-            reportStatoClientiProgressBar.setMaximum(rowsRSC);
-            int progress = 0;
+            logActivity("Loading file \"" + ReportStatoClienti.getName() + "\" ........");
+            setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.LOADING);
 
-            String line = "";
-            rawDataReportStatoClienti = new ArrayList<>();
+            try {
+                FileReader fileReader = new FileReader(ReportStatoClienti);
+                BufferedReader reader = new BufferedReader(fileReader);
 
-            System.out.println(rowsRSC);
-            line = reader.readLine();
-            reportStatoClientiProgressBar.setValue(progress++);
+                rowsRSC = countRows(ReportStatoClienti) - 7;
+                reportStatoClientiProgressBar.setMaximum(rowsRSC);
+                int progress = 0;
 
-            if(line.equals(ReportHeaders.REPORT_STATO_CLIENTI_HEADER)) {
-                logActivity("........ File headers match: OK ........");
+                String line = "";
+                rawDataReportStatoClienti = new ArrayList<>();
 
-                for(int i = 1; i <= rowsRSC-1; i++) {
-                    line = reader.readLine();
-                    reportStatoClientiProgressBar.setValue(progress++);
-                    String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-                    rawDataReportStatoClienti.add(new ReportStatoClientiRecord(record));
+                System.out.println(rowsRSC);
+                line = reader.readLine();
+                reportStatoClientiProgressBar.setValue(progress++);
+
+                if (line.equals(ReportHeaders.REPORT_STATO_CLIENTI_HEADER)) {
+                    logActivity("........ File headers match: OK ........");
+
+                    for (int i = 1; i <= rowsRSC - 1; i++) {
+                        line = reader.readLine();
+                        reportStatoClientiProgressBar.setValue(progress++);
+                        String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+                        rawDataReportStatoClienti.add(new ReportStatoClientiRecord(record));
+                    }
+
+                    logActivity("Loaded << " + (progress - 1) + " >> records ........");
+                    logActivity("Loading finished .........................");
+                    setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.DONE);
+
+                } else {
+                    logActivity("........ File headers match: FAIL ........");
+                    logActivity("Loading failed ...........................");
+                    setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.ERROR);
                 }
 
-                logActivity("Loaded << " + (progress-1) + " >> records ........");
-                logActivity("Loading finished .........................");
-                setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.DONE);
+                System.out.println(rawDataReportStatoClienti.get(0).getSomeStrings());
+                System.out.println(rawDataReportStatoClienti.get(28583).getSomeStrings());
 
-            } else {
-                logActivity("........ File headers match: FAIL ........");
-                logActivity("Loading failed ...........................");
-                setProgressStatus(reportStatoClienti_progress_label, ProgressStatus.ERROR);
+                reader.close();
+
+            } catch (Exception ex) {
+                logActivity("File Report Stato Clienti cannot be read ....");
+                ex.printStackTrace();
             }
-
-            System.out.println(rawDataReportStatoClienti.get(0).getSomeStrings());
-            System.out.println(rawDataReportStatoClienti.get(28583).getSomeStrings());
-
-            reader.close();
-
-        } catch(Exception ex) {
-            System.out.println("Selected file cannot be read");
-            ex.printStackTrace();
+        } else {
+            logActivity("Report Stato Clienti was not selected ....");
         }
     }
 
@@ -410,22 +425,17 @@ public class MainGUI {
      */
 
     private void saveResults() {
-        setProgressStatus(saving_progress_label, ProgressStatus.SAVING);
-        logActivity("Saving the results in: " + saveFile.getAbsolutePath());
+        if(saveFile != null) {
+            setProgressStatus(saving_progress_label, ProgressStatus.SAVING);
+            logActivity("Saving the results in: " + saveFile.getAbsolutePath());
 
-//        XMLgenerator newOrdersXML = new XMLgenerator(true);
-//        newOrdersXML.addTransaction(rawDataReportGenerale.get(0));
-//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3578));
-//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3573));
-//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3572));
-//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3561));
-//        newOrdersXML.addTransaction(rawDataReportGenerale.get(3553));
-//        newOrdersXML.addTransaction(rawDataReportGenerale.get(373));
-//        newOrdersXML.saveXMLtemplate(saveFile.getPath());
 
-        newOrdersLoad.saveXMLtemplate(saveFile.getPath());
+            newOrdersLoad.saveXMLtemplate(saveFile.getPath());
 
-        printLogToFile();
+            printLogToFile();
+        } else {
+            setProgressStatus(saving_progress_label, ProgressStatus.ERROR);
+        }
     }
 
 
