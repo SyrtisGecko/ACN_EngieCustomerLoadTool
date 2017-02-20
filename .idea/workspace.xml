@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7da70f2-b786-4c2a-a669-c0b64ce2ec65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$1.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$2.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$3.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$4.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$5.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainGUI.java" afterPath="$PROJECT_DIR$/src/MainGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/XMLgenerator.java" afterPath="$PROJECT_DIR$/src/XMLgenerator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="199" column="53" lean-forward="false" selection-start-line="199" selection-start-column="53" selection-end-line="199" selection-end-column="53" />
+            <state relative-caret-position="121">
+              <caret line="440" column="35" lean-forward="false" selection-start-line="439" selection-start-column="12" selection-end-line="440" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8300#8301#0" expanded="true" />
@@ -39,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLgenerator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="XMLgenerator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="52" lean-forward="true" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+            <state relative-caret-position="2329">
+              <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,10 +126,10 @@
         <option value="$PROJECT_DIR$/src/cosmetics/ReportHeaders.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" />
         <option value="$PROJECT_DIR$/src/MainGUI.form" />
-        <option value="$PROJECT_DIR$/src/XMLgenerator.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/BORecord.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
         <option value="$PROJECT_DIR$/src/MainGUI.java" />
+        <option value="$PROJECT_DIR$/src/XMLgenerator.java" />
       </list>
     </option>
   </component>
@@ -693,16 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="52" lean-forward="true" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -736,12 +719,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="199" column="53" lean-forward="false" selection-start-line="199" selection-start-column="53" selection-end-line="199" selection-end-column="53" />
+        <state relative-caret-position="121">
+          <caret line="440" column="35" lean-forward="false" selection-start-line="439" selection-start-column="12" selection-end-line="440" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8300#8301#0" expanded="true" />
             <element signature="e#8372#8373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2329">
+          <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -37,12 +37,37 @@ public class XMLgenerator {
     }
 
     private void setupEmptyXML() {
-        XMLtemplate.add("<XMLtemplate>");
-        XMLtemplate.add("</XMLtemplate>");
+        XMLtemplate.add("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
+        XMLtemplate.add("<vip-customer-load create-date-time=\"" + getDate() + "\" origin=\"CGM\">");
+        XMLtemplate.add("<data>");
+        XMLtemplate.add("</data>");
+        XMLtemplate.add("<control>");
+        XMLtemplate.add("<customer country=\"IT\" service=\"ENE-DUAL1\">");
+        XMLtemplate.add("<transaction-count>0</transaction-count>");
+        XMLtemplate.add("<add-count>0</add-count>");
+        XMLtemplate.add("<change-count>0</change-count>");
+        XMLtemplate.add("</customer>");
+        XMLtemplate.add("<customer country=\"IT\" service=\"ENE-ELEC\">");
+        XMLtemplate.add("<transaction-count>0</transaction-count>");
+        XMLtemplate.add("<add-count>0</add-count>");
+        XMLtemplate.add("<change-count>0</change-count>");
+        XMLtemplate.add("</customer>");
+        XMLtemplate.add("<customer country=\"IT\" service=\"ENE-GAS\">");
+        XMLtemplate.add("<transaction-count>0</transaction-count>");
+        XMLtemplate.add("<add-count>0</add-count>");
+        XMLtemplate.add("<change-count>0</change-count>");
+        XMLtemplate.add("</customer>");
+        XMLtemplate.add("<customer country=\"IT\" service=\"ENE-DUAL2\">");
+        XMLtemplate.add("<transaction-count>0</transaction-count>");
+        XMLtemplate.add("<add-count>0</add-count>");
+        XMLtemplate.add("<change-count>0</change-count>");
+        XMLtemplate.add("</customer>");
+        XMLtemplate.add("</control>");
+        XMLtemplate.add("</vip-customer-load>");
     }
 
     public void addTransaction(ReportGeneraleRecord record) {
-        int n = (transactionCount * 44) + 1;
+        int n = (transactionCount * 44) + 3;
         XMLtemplate.add(n++, "<transaction id-type=\"VENDOR-CUSTOMER\" id=\"" + record.checkModuloWeb() + "\" seq=\"" + ++transactionCount + "\">");
         XMLtemplate.add(n++, "<customer service=\"" + record.checkServiceCode() + "\" country=\"IT\" action=\"CHANGE\">");
         XMLtemplate.add(n++, "<vendor-account-id>" + record.checkIdModulo() + "</vendor-account-id>");
@@ -97,14 +122,20 @@ public class XMLgenerator {
         }
     }
 
+    private String getDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+
     public void saveXMLtemplate(String path) {
         try {
             Iterator iterator = XMLtemplate.iterator();
 
-            DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
+            DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
             Date date = new Date();
 
-            PrintWriter writer = new PrintWriter(path + "\\" + dateFormat.format(date) + newOrderAdd + ".xml");
+            PrintWriter writer = new PrintWriter(path + "\\VIPCUST-CGMIT-" + dateFormat.format(date) + newOrderAdd + ".xml");
 
             while (iterator.hasNext()) {
                 writer.println(iterator.next());
