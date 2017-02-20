@@ -63,6 +63,10 @@ public class MainGUI {
     private File ReportStatoClienti;
     private File saveFile;
 
+    private int rowsRSC;
+    private int rowsRG;
+    private int rowsBO;
+
     private ArrayList<BORecord> rawDataBO;
     private ArrayList<ReportGeneraleRecord> rawDataReportGenerale;
     private ArrayList<ReportStatoClientiRecord> rawDataReportStatoClienti;
@@ -166,10 +170,14 @@ public class MainGUI {
     }
 
     private void searchNew() {
-        logActivity("Searchin for new orders ......");
+        logActivity("Searching for new orders ......");
         newOrdersLoad = new XMLgenerator(true);
 
         Iterator iterator = rawDataReportGenerale.iterator();
+
+        int step = rowsRG / 33;
+        int progress = 0;
+        int value = 0;
 
         while(iterator.hasNext()) {
             ReportGeneraleRecord record = (ReportGeneraleRecord) iterator.next();
@@ -183,6 +191,13 @@ public class MainGUI {
                     recordFound = true;
                     break;
                 }
+            }
+
+            progress++;
+            if(progress >= step) {
+                progress = 0;
+                value++;
+                calculationProgressBar.setValue(value);
             }
 
             if(!recordFound) {
@@ -212,21 +227,21 @@ public class MainGUI {
             FileReader fileReader = new FileReader(ReportStatoClienti);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            int rows = countRows(ReportStatoClienti) - 7;
-            reportStatoClientiProgressBar.setMaximum(rows);
+            rowsRSC = countRows(ReportStatoClienti) - 7;
+            reportStatoClientiProgressBar.setMaximum(rowsRSC);
             int progress = 0;
 
             String line = "";
             rawDataReportStatoClienti = new ArrayList<>();
 
-            System.out.println(rows);
+            System.out.println(rowsRSC);
             line = reader.readLine();
             reportStatoClientiProgressBar.setValue(progress++);
 
             if(line.equals(ReportHeaders.REPORT_STATO_CLIENTI_HEADER)) {
                 logActivity("........ File headers match: OK ........");
 
-                for(int i = 1; i <= rows-1; i++) {
+                for(int i = 1; i <= rowsRSC-1; i++) {
                     line = reader.readLine();
                     reportStatoClientiProgressBar.setValue(progress++);
                     String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
@@ -262,21 +277,21 @@ public class MainGUI {
             FileReader fileReader = new FileReader(ReportGenerale);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            int rows = countRows(ReportGenerale) - 7;
-            reportGeneraleProgressBar.setMaximum(rows);
+            rowsRG = countRows(ReportGenerale) - 7;
+            reportGeneraleProgressBar.setMaximum(rowsRG);
             int progress = 0;
 
             String line = "";
             rawDataReportGenerale = new ArrayList<>();
 
-            System.out.println(rows);
+            System.out.println(rowsRG);
             line = reader.readLine();
             reportGeneraleProgressBar.setValue(progress++);
 
             if(line.equals(ReportHeaders.REPORT_GENERALE_HEADER)) {
                 logActivity("........ File headers match: OK ........");
 
-                for(int i = 1; i <= rows-1; i++) {
+                for(int i = 1; i <= rowsRG-1; i++) {
                     line = reader.readLine();
                     reportGeneraleProgressBar.setValue(progress++);
                     String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
@@ -318,21 +333,21 @@ public class MainGUI {
             FileReader fileReader = new FileReader(BOReport);
             BufferedReader reader = new BufferedReader(fileReader);
 
-            int rows = countRows(BOReport);
-            BOprogressBar.setMaximum(rows);
+            rowsBO = countRows(BOReport);
+            BOprogressBar.setMaximum(rowsBO);
             int progress = 0;
 
             String line = "";
             rawDataBO = new ArrayList<>();
 
-            System.out.println(rows);
+            System.out.println(rowsBO);
             line = reader.readLine();
             BOprogressBar.setValue(progress++);
 
             if(line.equals(ReportHeaders.BO_REPORT_HEADER)) {
                 logActivity("........ File headers match: OK ........");
 
-                for(int i = 1; i <= rows-1; i++) {
+                for(int i = 1; i <= rowsBO-1; i++) {
                     line = reader.readLine();
                     BOprogressBar.setValue(progress++);
                     String[] record = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
