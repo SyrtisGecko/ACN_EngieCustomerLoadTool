@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7da70f2-b786-4c2a-a669-c0b64ce2ec65" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$1.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$2.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$3.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$4.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$5.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/BORecord.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/BORecord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/ReportGeneraleRecord.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/ReportGeneraleRecord.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainGUI.java" afterPath="$PROJECT_DIR$/src/MainGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/BORecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/BORecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +32,8 @@
       <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4367">
-              <caret line="257" column="39" lean-forward="false" selection-start-line="257" selection-start-column="39" selection-end-line="257" selection-end-column="39" />
+            <state relative-caret-position="697">
+              <caret line="257" column="29" lean-forward="false" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,7 +44,7 @@
       <file leaf-file-name="XMLgenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2329">
+            <state relative-caret-position="391">
               <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -47,10 +56,12 @@
       <file leaf-file-name="BORecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/BORecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+            <state relative-caret-position="461">
+              <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
               <folding>
+                <element signature="e#1569#1570#0" expanded="true" />
                 <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#1686#1687#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,8 +70,8 @@
       <file leaf-file-name="ReportGeneraleRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4488">
-              <caret line="264" column="16" lean-forward="true" selection-start-line="264" selection-start-column="16" selection-end-line="264" selection-end-column="16" />
+            <state relative-caret-position="325">
+              <caret line="193" column="31" lean-forward="true" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3432#3433#0" expanded="true" />
@@ -79,6 +90,10 @@
                 <element signature="e#7199#7200#0" expanded="true" />
                 <element signature="e#7238#7239#0" expanded="true" />
                 <element signature="e#7273#7274#0" expanded="true" />
+                <element signature="e#7890#7891#0" expanded="true" />
+                <element signature="e#7924#7925#0" expanded="true" />
+                <element signature="e#7961#7962#0" expanded="true" />
+                <element signature="e#7994#7995#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,9 +141,9 @@
         <option value="$PROJECT_DIR$/src/cosmetics/ReportHeaders.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java" />
         <option value="$PROJECT_DIR$/src/MainGUI.form" />
+        <option value="$PROJECT_DIR$/src/XMLgenerator.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/BORecord.java" />
         <option value="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
-        <option value="$PROJECT_DIR$/src/XMLgenerator.java" />
         <option value="$PROJECT_DIR$/src/MainGUI.java" />
       </list>
     </option>
@@ -684,16 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reportRecords/BORecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
-          <folding>
-            <element signature="e#1602#1603#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -707,9 +712,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/reportRecords/BORecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+          <folding>
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
+        <state relative-caret-position="391">
           <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -719,8 +736,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4488">
-          <caret line="264" column="16" lean-forward="true" selection-start-line="264" selection-start-column="16" selection-end-line="264" selection-end-column="16" />
+        <state relative-caret-position="325">
+          <caret line="193" column="31" lean-forward="true" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3432#3433#0" expanded="true" />
@@ -739,14 +756,18 @@
             <element signature="e#7199#7200#0" expanded="true" />
             <element signature="e#7238#7239#0" expanded="true" />
             <element signature="e#7273#7274#0" expanded="true" />
+            <element signature="e#7890#7891#0" expanded="true" />
+            <element signature="e#7924#7925#0" expanded="true" />
+            <element signature="e#7961#7962#0" expanded="true" />
+            <element signature="e#7994#7995#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4367">
-          <caret line="257" column="39" lean-forward="false" selection-start-line="257" selection-start-column="39" selection-end-line="257" selection-end-column="39" />
+        <state relative-caret-position="697">
+          <caret line="257" column="29" lean-forward="false" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

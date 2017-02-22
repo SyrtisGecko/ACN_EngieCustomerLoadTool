@@ -230,16 +230,34 @@ public class MainGUI {
         int value = 33;
 
         while(iterator.hasNext()) {
-            ReportGeneraleRecord record = (ReportGeneraleRecord) iterator.next();
-            String id = record.checkModuloWeb();
+            ReportGeneraleRecord record; // = (ReportGeneraleRecord) iterator.next();
+            BORecord recordChecked = (BORecord) iterator.next();
+            String id = recordChecked.getCstAccount();
             boolean recordFound = false;
+            boolean rGas = false;
+            boolean rEle = false;
 
             Iterator iter = rawDataReportGenerale.iterator();
             while(iter.hasNext()) {
-                BORecord r = (BORecord) iter.next();
-                if(r.getCstAccount().equals(id)) {
-                    recordFound = true;
-                    break;
+                record = (ReportGeneraleRecord) iter.next();
+                if(record.checkModuloWeb().equals(id)) {
+                    if(!recordChecked.getCstProviderStatus().equals(record.getStatus())) {
+                        if(record.getTipoCliente().equals("Residenziale") && record.getTipoTicket().equals("Dual Fuel [GM]")) {
+                            //if()
+                        } else {
+                            if(recordChecked.getCstProviderStatus().equals("REVOKED") && record.getStatus().equals("INCOMPLETE")) {
+
+                            } else {
+                                recordFound = true;
+                                if (record.isValid()) {
+                                    logActivity("Change order (" + record.checkModuloWeb() + ") found ....");
+                                    changesOrdersLoad.addTransaction(record);
+                                } else {
+                                    logActivity("Change order (" + record.checkModuloWeb() + ") is invalid and cannot be added to the load.");
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -249,21 +267,23 @@ public class MainGUI {
                 value++;
                 calculationProgressBar.setValue(value);
             }
-
-            if(!recordFound) {
-                if(record.isValid()) {
-                    logActivity("Change order (" + record.checkModuloWeb() + ") found ....");
-                    changesOrdersLoad.addTransaction(record);
-                } else {
-                    logActivity("Change order (" + record.checkModuloWeb() + ") is invalid and cannot be added to the load.");
-                }
-            }
+//
+//            if(!recordFound) {
+//                if(record.isValid()) {
+//                    logActivity("Change order (" + record.checkModuloWeb() + ") found ....");
+//                    changesOrdersLoad.addTransaction(record);
+//                } else {
+//                    logActivity("Change order (" + record.checkModuloWeb() + ") is invalid and cannot be added to the load.");
+//                }
+//            }
         }
     }
 
     private void reconciliation() {
         if(ReportStatoClienti != null) {
             Iterator iterator = rawDataReportStatoClienti.iterator();
+            // TODO once BO report is corrected
+            logActivity("Reconciliation with Report Stato Clienti was skipped ....");
         } else {
             logActivity("Reconciliation with Report Stato Clienti was skipped ....");
         }
@@ -472,6 +492,7 @@ public class MainGUI {
 
 
             newOrdersLoad.saveXMLtemplate(saveFile.getPath());
+            changesOrdersLoad.saveXMLtemplate(saveFile.getPath());
 
             printLogToFile();
         } else {

@@ -54,4 +54,8 @@ public class BORecord {
     public String getCstAccount() {
         return cstAccount;
     }
+
+    public String getCstProviderStatus() {
+        return cstProviderStatus;
+    }
 }

@@ -275,4 +275,12 @@ public class ReportGeneraleRecord {
         }
         return true;
     }
+
+    public String getTipoCliente() {
+        return tipoCliente;
+    }
+
+    public String getTipoTicket() {
+        return tipoTicket;
+    }
 }
