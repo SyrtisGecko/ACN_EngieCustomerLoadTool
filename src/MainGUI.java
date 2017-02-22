@@ -176,6 +176,11 @@ public class MainGUI {
         reconciliation();
     }
 
+    /***
+     * Checks all records from Report Generale and verifies if they already exists in BO Report.
+     * If not, they are considered to be new orders and they are being added to the new customer load.
+     */
+
     private void searchNew() {
         logActivity("Searching for new orders ......");
         newOrdersLoad = new XMLgenerator(true);
@@ -218,9 +223,20 @@ public class MainGUI {
         }
     }
 
+    /***
+     * Checks all records from BO Report and verifies them against Report Generale
+     *
+     * Currently Residential Dual Fuel orders are being verified only against their [EE] part.
+     * (can be corrected once BO report start to include actual service codes)
+     *
+     * Changes from status "REVOKED" to "INCOMPLETE" are being ignored.
+     *
+     * Other orders which status has changed are being added to the status change customer load.
+     */
+
     private void searchChanges() {
 
-        logActivity("Searching for orders changes ......");
+        logActivity("Searching for order changes ......");
         changesOrdersLoad = new XMLgenerator(false);
 
         Iterator iterator = rawDataBO.iterator();
@@ -230,12 +246,9 @@ public class MainGUI {
         int value = 33;
 
         while(iterator.hasNext()) {
-            ReportGeneraleRecord record; // = (ReportGeneraleRecord) iterator.next();
+            ReportGeneraleRecord record;
             BORecord recordChecked = (BORecord) iterator.next();
             String id = recordChecked.getCstAccount();
-            boolean recordFound = false;
-            boolean rGas = false;
-            boolean rEle = false;
 
             Iterator iter = rawDataReportGenerale.iterator();
             while(iter.hasNext()) {
@@ -243,18 +256,13 @@ public class MainGUI {
                 if(record.checkModuloWeb().equals(id)) {
                     if(!recordChecked.getCstProviderStatus().equals(record.getStatus())) {
                         if(record.getTipoCliente().equals("Residenziale") && record.getTipoTicket().equals("Dual Fuel [GM]")) {
-                            //if()
+                            //TODO once BO Report start to include actual service codes, this can be modified to validate correctly Dual Fuel Residential orders
                         } else {
                             if(recordChecked.getCstProviderStatus().equals("REVOKED") && record.getStatus().equals("INCOMPLETE")) {
 
                             } else {
-                                recordFound = true;
-                                if (record.isValid()) {
-                                    logActivity("Change order (" + record.checkModuloWeb() + ") found ....");
-                                    changesOrdersLoad.addTransaction(record);
-                                } else {
-                                    logActivity("Change order (" + record.checkModuloWeb() + ") is invalid and cannot be added to the load.");
-                                }
+                                logActivity("Change order (" + record.checkModuloWeb() + ") found ....");
+                                changesOrdersLoad.addTransaction(record);
                             }
                         }
                     }
@@ -267,17 +275,14 @@ public class MainGUI {
                 value++;
                 calculationProgressBar.setValue(value);
             }
-//
-//            if(!recordFound) {
-//                if(record.isValid()) {
-//                    logActivity("Change order (" + record.checkModuloWeb() + ") found ....");
-//                    changesOrdersLoad.addTransaction(record);
-//                } else {
-//                    logActivity("Change order (" + record.checkModuloWeb() + ") is invalid and cannot be added to the load.");
-//                }
-//            }
         }
     }
+
+    /***
+     * Checks all records in BO Report against Report Stato Clienti.
+     *
+     * Other orders which status has changed are being added to the status change customer load.
+     */
 
     private void reconciliation() {
         if(ReportStatoClienti != null) {
@@ -288,6 +293,10 @@ public class MainGUI {
             logActivity("Reconciliation with Report Stato Clienti was skipped ....");
         }
     }
+
+    /***
+     * Loads records from Report Stato Client to the program
+     */
 
     private void loadReportStatoClienti() {
 
@@ -345,6 +354,10 @@ public class MainGUI {
         }
     }
 
+    /***
+     * Loads records from Report Generale to the program
+     */
+
     private void loadReportGenerale() {
         logActivity("Loading file \"" + ReportGenerale.getName() + "\" ........");
         setProgressStatus(reportGenerale_progress_label, ProgressStatus.LOADING);
@@ -397,8 +410,7 @@ public class MainGUI {
 
 
     /***
-     * Reading BO report from the file
-     * File is being validated by comparing headers
+     * Loads records from BO Report to the program
      */
 
     private void loadBO() {
@@ -474,6 +486,12 @@ public class MainGUI {
         }
         return n;
     }
+
+    /***
+     * Sets up given label to display value of given status
+     * @param label
+     * @param status
+     */
 
     private void setProgressStatus(JLabel label, ProgressStatus status) {
         label.setText(status.getStatus());

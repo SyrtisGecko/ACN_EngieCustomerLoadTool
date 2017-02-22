@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7da70f2-b786-4c2a-a669-c0b64ce2ec65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$1.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$2.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$3.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$4.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$5.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/MainGUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/BORecord.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/BORecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/ReportGeneraleRecord.class" afterPath="$PROJECT_DIR$/out/production/ACN_EngieCustomerLoadTool/reportRecords/ReportGeneraleRecord.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainGUI.java" afterPath="$PROJECT_DIR$/src/MainGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/BORecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/BORecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" afterPath="$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +22,8 @@
       <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="257" column="29" lean-forward="false" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
+            <state relative-caret-position="3680">
+              <caret line="490" column="59" lean-forward="false" selection-start-line="490" selection-start-column="59" selection-end-line="490" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,7 +34,7 @@
       <file leaf-file-name="XMLgenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="2193">
               <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -56,7 +46,7 @@
       <file leaf-file-name="BORecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/BORecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
+            <state relative-caret-position="935">
               <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
               <folding>
                 <element signature="e#1569#1570#0" expanded="true" />
@@ -70,30 +60,10 @@
       <file leaf-file-name="ReportGeneraleRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="193" column="31" lean-forward="true" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="31" />
+            <state relative-caret-position="552">
+              <caret line="193" column="31" lean-forward="false" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3432#3433#0" expanded="true" />
-                <element signature="e#3474#3475#0" expanded="true" />
-                <element signature="e#6277#6278#0" expanded="true" />
-                <element signature="e#6315#6316#0" expanded="true" />
-                <element signature="e#6346#6347#0" expanded="true" />
-                <element signature="e#6373#6374#0" expanded="true" />
-                <element signature="e#6975#6976#0" expanded="true" />
-                <element signature="e#7007#7008#0" expanded="true" />
-                <element signature="e#7046#7047#0" expanded="true" />
-                <element signature="e#7081#7082#0" expanded="true" />
-                <element signature="e#7114#7115#0" expanded="true" />
-                <element signature="e#7143#7144#0" expanded="true" />
-                <element signature="e#7173#7174#0" expanded="true" />
-                <element signature="e#7199#7200#0" expanded="true" />
-                <element signature="e#7238#7239#0" expanded="true" />
-                <element signature="e#7273#7274#0" expanded="true" />
-                <element signature="e#7890#7891#0" expanded="true" />
-                <element signature="e#7924#7925#0" expanded="true" />
-                <element signature="e#7961#7962#0" expanded="true" />
-                <element signature="e#7994#7995#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,7 +72,7 @@
       <file leaf-file-name="ReportStatoClientiRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="1122">
               <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
               <folding />
             </state>
@@ -170,8 +140,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,6 +186,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -489,13 +459,12 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -512,6 +481,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -528,11 +498,67 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1487791548767" expanded="true" signature="8874:9333" ph="/**...*/" />
+            <marker date="1487791548767" expanded="true" signature="11111:11296" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2193">
+          <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reportRecords/BORecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+          <folding>
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3213">
+          <caret line="193" column="31" lean-forward="true" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ACN_EngieCustomerLoadTool.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -542,6 +568,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1487791548767" expanded="true" signature="8874:9333" ph="/**...*/" />
+            <marker date="1487791548767" expanded="true" signature="11111:11296" ph="/**...*/" />
           </folding>
         </state>
       </provider>
@@ -563,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="507" column="16" lean-forward="false" selection-start-line="507" selection-start-column="16" selection-end-line="507" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -628,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8468">
           <caret line="51" column="19" lean-forward="false" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="450" column="36" lean-forward="true" selection-start-line="450" selection-start-column="36" selection-end-line="450" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="149" column="50" lean-forward="false" selection-start-line="149" selection-start-column="50" selection-end-line="149" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -658,7 +681,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportStatoClientiRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="1122">
           <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
           <folding />
         </state>
@@ -676,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6581">
           <caret line="130" column="13" lean-forward="false" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2552">
           <caret line="151" column="22" lean-forward="false" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,22 +720,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34083">
           <caret line="184" column="27" lean-forward="false" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="27" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2193">
+          <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reportRecords/BORecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
+        <state relative-caret-position="935">
           <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
           <folding>
             <element signature="e#1569#1570#0" expanded="true" />
@@ -724,52 +749,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XMLgenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="137" column="73" lean-forward="false" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
+        <state relative-caret-position="552">
+          <caret line="193" column="31" lean-forward="false" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reportRecords/ReportGeneraleRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="193" column="31" lean-forward="true" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#3474#3475#0" expanded="true" />
-            <element signature="e#6277#6278#0" expanded="true" />
-            <element signature="e#6315#6316#0" expanded="true" />
-            <element signature="e#6346#6347#0" expanded="true" />
-            <element signature="e#6373#6374#0" expanded="true" />
-            <element signature="e#6975#6976#0" expanded="true" />
-            <element signature="e#7007#7008#0" expanded="true" />
-            <element signature="e#7046#7047#0" expanded="true" />
-            <element signature="e#7081#7082#0" expanded="true" />
-            <element signature="e#7114#7115#0" expanded="true" />
-            <element signature="e#7143#7144#0" expanded="true" />
-            <element signature="e#7173#7174#0" expanded="true" />
-            <element signature="e#7199#7200#0" expanded="true" />
-            <element signature="e#7238#7239#0" expanded="true" />
-            <element signature="e#7273#7274#0" expanded="true" />
-            <element signature="e#7890#7891#0" expanded="true" />
-            <element signature="e#7924#7925#0" expanded="true" />
-            <element signature="e#7961#7962#0" expanded="true" />
-            <element signature="e#7994#7995#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="257" column="29" lean-forward="false" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
+        <state relative-caret-position="3680">
+          <caret line="490" column="59" lean-forward="false" selection-start-line="490" selection-start-column="59" selection-end-line="490" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1487791548767" expanded="true" signature="8874:9333" ph="/**...*/" />
+            <marker date="1487791548767" expanded="true" signature="11111:11296" ph="/**...*/" />
           </folding>
         </state>
       </provider>
