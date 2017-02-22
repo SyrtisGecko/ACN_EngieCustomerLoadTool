@@ -283,4 +283,8 @@ public class ReportGeneraleRecord {
     public String getTipoTicket() {
         return tipoTicket;
     }
+
+    public String getIdModulo() {
+        return idModulo;
+    }
 }

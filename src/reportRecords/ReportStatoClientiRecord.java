@@ -94,4 +94,16 @@ public class ReportStatoClientiRecord {
     public String getStatoFornituraGAS() {
         return getStatus(statoFornituraGAS);
     }
+
+    public String getModuloCodiceContratto() {
+        return moduloCodiceContratto;
+    }
+
+    public String getModuloTipoCliente() {
+        return moduloTipoCliente;
+    }
+
+    public String getModuloCommodity() {
+        return moduloCommodity;
+    }
 }

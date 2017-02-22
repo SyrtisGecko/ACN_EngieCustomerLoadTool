@@ -294,12 +294,40 @@ public class MainGUI {
 
             while(iterator.hasNext()) {
                 BORecord recordChecked = (BORecord) iterator.next();
-                String id = recordChecked.getCstAccount();
 
-                if(id.substring(0, 1).equals("M")) {
+                if(recordChecked.getCstAccount().substring(0, 1).equals("M")) {
+                    ReportGeneraleRecord recordRG = getRecordRG(recordChecked);
 
+                    String id = recordRG.getIdModulo();
+
+                    Iterator iter = rawDataReportStatoClienti.iterator();
+
+                    while (iter.hasNext()) {
+                        ReportStatoClientiRecord recordSC = (ReportStatoClientiRecord) iter.next();
+
+                        if (recordSC.getModuloCodiceContratto().equals(id)) {
+                            if(!recordSC.getModuloTipoCliente().equals("Residenziale") && recordSC.getModuloCommodity().equals("Dual Fuel")) {
+                                //TODO once BO report starts including correct service codes then Residential Dual Fuel validation can be implemented
+                                if (!recordSC.getStatoFornituraEE().equals("") && !recordSC.getStatoFornituraEE().equals(recordChecked.getCstProviderStatus())) {
+
+                                } else if(!recordSC.getStatoFornituraGAS().equals("") && !recordSC.getStatoFornituraGAS().equals(recordChecked.getCstProviderStatus())) {
+
+                                }
+
+                            }
+                        }
+
+
+                    }
                 } else {
 
+                }
+
+                progress++;
+                if(progress >= step) {
+                    progress = 0;
+                    value++;
+                    calculationProgressBar.setValue(value);
                 }
 
             }
@@ -309,6 +337,20 @@ public class MainGUI {
             logActivity("Report Stato Clienti is missing ....");
             logActivity("Reconciliation with Report Stato Clienti was skipped ....");
         }
+    }
+
+
+
+    private ReportGeneraleRecord getRecordRG(BORecord recordChecked) {
+        Iterator iterator = rawDataReportGenerale.iterator();
+
+        while(iterator.hasNext()) {
+            ReportGeneraleRecord record = (ReportGeneraleRecord) iterator.next();
+            if(recordChecked.getCstAccount().equals(record.checkServiceCode())) {
+                return record;
+            }
+        }
+        return null;
     }
 
     /***
