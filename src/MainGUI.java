@@ -173,7 +173,8 @@ public class MainGUI {
     private void calculateReports() {
         searchNew();
         searchChanges();
-        reconciliation();
+//        reconciliation();
+        logActivity("Reconciliation with Report Stato Clienti was skipped ....");
     }
 
     /***
@@ -359,13 +360,16 @@ public class MainGUI {
 
     private ReportGeneraleRecord getRecordRG(BORecord recordChecked) {
         Iterator iterator = rawDataReportGenerale.iterator();
+        String s = recordChecked.getCstAccount().substring(0, 18);
 
         while(iterator.hasNext()) {
             ReportGeneraleRecord record = (ReportGeneraleRecord) iterator.next();
-            if(recordChecked.getCstAccount().equals(record.checkServiceCode())) {
+            System.out.println(recordChecked.getCstAccount() + " = " + record.checkModuloWeb());
+            if(recordChecked.getCstAccount().equals(record.checkModuloWeb())) {
                 return record;
             }
         }
+        logActivity("!!!Could not find RG record during reconciliation ....");
         return null;
     }
 
