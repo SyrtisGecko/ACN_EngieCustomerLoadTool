@@ -286,10 +286,27 @@ public class MainGUI {
 
     private void reconciliation() {
         if(ReportStatoClienti != null) {
-            Iterator iterator = rawDataReportStatoClienti.iterator();
-            // TODO once BO report is corrected
-            logActivity("Reconciliation with Report Stato Clienti was skipped ....");
+            Iterator iterator = rawDataBO.iterator();
+
+            int step = rowsBO / 34;
+            int progress = 0;
+            int value = 66;
+
+            while(iterator.hasNext()) {
+                BORecord recordChecked = (BORecord) iterator.next();
+                String id = recordChecked.getCstAccount();
+
+                if(id.substring(0, 1).equals("M")) {
+
+                } else {
+
+                }
+
+            }
+
+//            logActivity("Reconciliation with Report Stato Clienti was skipped ....");
         } else {
+            logActivity("Report Stato Clienti is missing ....");
             logActivity("Reconciliation with Report Stato Clienti was skipped ....");
         }
     }

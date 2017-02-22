@@ -71,4 +71,27 @@ public class ReportStatoClientiRecord {
     public String getSomeStrings() {
         return praticaID + " " + tipoRichiesta + " " + dataAttivazione + " " + moduloModulitaDiStipula;
     }
+
+    private String getStatus(String status) {
+        if(status.equals("Attivata")) {
+            return "ACTIVE";
+        } else if(status.equals("Cessata")) {
+            return "REVOKED";
+        } else if(status.equals("In cessazione")) {
+            return "REVOKED";
+        } else if(status.equals("In attivazione")) {
+            return "ACTIVE";
+        } else if(status.equals("Non attiva")) {
+            return "REVOKED";
+        }
+        return "";
+    }
+
+    public String getStatoFornituraEE() {
+        return getStatus(statoFornituraEE);
+    }
+
+    public String getStatoFornituraGAS() {
+        return getStatus(statoFornituraGAS);
+    }
 }
