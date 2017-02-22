@@ -287,4 +287,8 @@ public class ReportGeneraleRecord {
     public String getIdModulo() {
         return idModulo;
     }
+
+    public void setStatoTicket(String statoTicket) {
+        this.statoTicket = statoTicket;
+    }
 }

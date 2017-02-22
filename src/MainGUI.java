@@ -285,6 +285,9 @@ public class MainGUI {
      */
 
     private void reconciliation() {
+
+        logActivity("Starting reconciliation with Report Stato Clienti ......");
+
         if(ReportStatoClienti != null) {
             Iterator iterator = rawDataBO.iterator();
 
@@ -309,9 +312,22 @@ public class MainGUI {
                             if(!recordSC.getModuloTipoCliente().equals("Residenziale") && recordSC.getModuloCommodity().equals("Dual Fuel")) {
                                 //TODO once BO report starts including correct service codes then Residential Dual Fuel validation can be implemented
                                 if (!recordSC.getStatoFornituraEE().equals("") && !recordSC.getStatoFornituraEE().equals(recordChecked.getCstProviderStatus())) {
+                                    logActivity("Status of order (" + recordRG.checkModuloWeb() + ") to be updated ....");
+                                    if(recordSC.getStatoFornituraEE().equals("ACTIVE")) {
+                                        recordRG.setStatoTicket("COMPLETATA");
+                                    } else if(recordSC.getStatoFornituraEE().equals("REVOKED")) {
+                                        recordRG.setStatoTicket("RETTIFICA");
+                                    }
+                                    changesOrdersLoad.addTransaction(recordRG);
 
                                 } else if(!recordSC.getStatoFornituraGAS().equals("") && !recordSC.getStatoFornituraGAS().equals(recordChecked.getCstProviderStatus())) {
-
+                                    logActivity("Status of order (" + recordRG.checkModuloWeb() + ") to be updated ....");
+                                    if(recordSC.getStatoFornituraGAS().equals("ACTIVE")) {
+                                        recordRG.setStatoTicket("COMPLETATA");
+                                    } else if(recordSC.getStatoFornituraGAS().equals("REVOKED")) {
+                                        recordRG.setStatoTicket("RETTIFICA");
+                                    }
+                                    changesOrdersLoad.addTransaction(recordRG);
                                 }
 
                             }
@@ -320,7 +336,7 @@ public class MainGUI {
 
                     }
                 } else {
-
+                    //TODO reconciliation for old orders. It would be good to have Report Generale with old orders.
                 }
 
                 progress++;
@@ -332,7 +348,7 @@ public class MainGUI {
 
             }
 
-//            logActivity("Reconciliation with Report Stato Clienti was skipped ....");
+            logActivity("Reconciliation of old orders was skipped ....");
         } else {
             logActivity("Report Stato Clienti is missing ....");
             logActivity("Reconciliation with Report Stato Clienti was skipped ....");
